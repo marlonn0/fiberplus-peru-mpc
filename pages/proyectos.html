@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras | MPC Perú</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-box"><img src="../assets/img/logo.jpg" class="logo-bg-fix"><span class="logo-text">MPC <span class="green-dot">.</span></span></div>
+        <ul class="menu">
+            <li><a href="../index.html">INICIO</a></li>
+            <li><a href="servicios.html">CAPACIDADES</a></li>
+            <li><a href="nosotros.html">LA EMPRESA</a></li>
+            <li><a href="proyectos.html" class="active">OBRAS</a></li>
+            <li><a href="contacto.html" class="cta-button">COTIZAR</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-internal bg-proyectos">
+        <div class="hero-overlay"></div>
+        <div class="hero-container"><h1 class="slide-in">NUESTRA <span class="outline-text">HUELLA</span></h1></div>
+    </header>
+
+    <section class="section-dark">
+        <div class="section-header-center"><h2>FILTRAR POR CATEGORÍA</h2></div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProjects('all')">VER TODO</button>
+            <button class="filter-btn" onclick="filterProjects('fibra')">FIBRA ÓPTICA</button>
+            <button class="filter-btn" onclick="filterProjects('civil')">OBRA CIVIL</button>
+        </div>
+
+        <div class="project-slider" id="projectGrid">
+            <div class="feat-project project-item fibra"><img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0" class="p-bg"><div class="p-overlay"><span class="p-cat">AREQUIPA</span><h3>Dorsal Sur</h3></div></div>
+            <div class="feat-project project-item civil"><img src="https://images.unsplash.com/photo-1558494949-ef526b0042a0" class="p-bg"><div class="p-overlay"><span class="p-cat">CUSCO</span><h3>Data Center</h3></div></div>
+            <div class="feat-project project-item fibra"><img src="https://images.unsplash.com/photo-1544197150-b99a580bbcbf" class="p-bg"><div class="p-overlay"><span class="p-cat">PIURA</span><h3>FTTH Rural</h3></div></div>
+            <div class="feat-project project-item torres"><img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b" class="p-bg"><div class="p-overlay"><span class="p-cat">LORETO</span><h3>Torre Selva</h3></div></div>
+        </div>
+    </section>
+
+    <section style="background: #000; padding: 80px 10%; border-top: 1px solid #222;">
+        <div style="display: flex; gap: 50px; align-items: start; flex-wrap: wrap;">
+            <div style="flex: 2;">
+                <span class="sub-tag">CASO DE ÉXITO</span>
+                <h2 style="color: white; margin-bottom: 20px;">DESAFÍO: <span style="color: #009A44;">TICLIO</span></h2>
+                <p style="color: #ccc;">Instalación a 4,800 m.s.n.m. con temperaturas bajo cero.</p>
+                <p style="color: #ccc;">Utilizamos aditivos acelerantes y concreto premezclado in-situ.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <div class="tech-sheet">
+                    <h4 style="color: var(--mpc-green); margin-bottom: 15px;">DATOS TÉCNICOS</h4>
+                    <div class="sheet-row"><span>Altitud:</span> <span>4,818 m.s.n.m.</span></div>
+                    <div class="sheet-row"><span>Viento:</span> <span>90 km/h</span></div>
+                    <div class="sheet-row"><span>Plazo:</span> <span>21 Días</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-dark"><div class="footer-copy">&copy; 2026 MPC.</div></footer>
+
+    <script>
+        function filterProjects(category) {
+            var items = document.getElementsByClassName("project-item");
+            var btns = document.getElementsByClassName("filter-btn");
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove("active");
+                if(btns[j].getAttribute("onclick").includes(category)) btns[j].classList.add("active");
+            }
+            for (var i = 0; i < items.length; i++) {
+                if (category == 'all') { items[i].classList.remove("hide"); items[i].classList.add("show"); }
+                else {
+                    if (items[i].classList.contains(category)) { items[i].classList.remove("hide"); items[i].classList.add("show"); }
+                    else { items[i].classList.remove("show"); items[i].classList.add("hide"); }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

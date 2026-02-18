@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacidades | MPC Perú</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-box"><img src="../assets/img/logo.jpg" class="logo-bg-fix"><span class="logo-text">MPC <span class="green-dot">.</span></span></div>
+        <ul class="menu">
+            <li><a href="../index.html">INICIO</a></li>
+            <li><a href="servicios.html" class="active">CAPACIDADES</a></li>
+            <li><a href="nosotros.html">LA EMPRESA</a></li>
+            <li><a href="proyectos.html">OBRAS</a></li>
+            <li><a href="contacto.html" class="cta-button">COTIZAR</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-internal bg-servicios">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <h1 class="slide-in">PORTAFOLIO <span class="outline-text">TÉCNICO</span></h1>
+            <p class="fade-in" style="font-size: 1.2rem; color: #ccc; margin-top: 20px; letter-spacing: 3px; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                SOLUCIONES DE INGENIERÍA Y MONTAJE
+            </p>
+        </div>
+    </header>
+
+    <section class="section-dark">
+        <div class="section-header-center"><h2>EXPLORA NUESTRAS DIVISIONES</h2></div>
+        <div class="tabs-container">
+            <div class="tab-header">
+                <button class="tab-btn active" onclick="openTab(event, 'tab1')"><i class="fas fa-trowel-bricks"></i> OBRA CIVIL</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab2')"><i class="fas fa-broadcast-tower"></i> TORRES</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab3')"><i class="fas fa-network-wired"></i> FIBRA ÓPTICA</button>
+            </div>
+
+            <div id="tab1" class="tab-content active">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>INFRAESTRUCTURA <span style="color: #009A44;">PASIVA</span></h3>
+                    <p style="color: #ccc; margin-bottom: 20px;">Especialistas en suelos complejos (Rocoso, Arenoso, Arcilloso).</p>
+                    <div class="details-accordion">
+                        <div class="detail-item">
+                            <button class="detail-btn" onclick="toggleDetail(this)">
+                                <span>Especificaciones Técnicas</span> <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="detail-text">Concreto f'c 210/280 con aditivos acelerantes. Curado químico incluido.</div>
+                        </div>
+                        <div class="detail-item">
+                            <button class="detail-btn" onclick="toggleDetail(this)">
+                                <span>Tipos de Construcción</span> <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="detail-text">Losas, dados, muros de contención y casetas.</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1;"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070" style="width: 100%;"></div>
+            </div>
+
+            <div id="tab2" class="tab-content">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>ALTURA & <span style="color: #009A44;">MONTAJE</span></h3>
+                    <p style="color: #ccc; margin-bottom: 20px;">Verticalidad garantizada. Certificación CBAL.</p>
+                    <div class="details-accordion">
+                        <div class="detail-item">
+                            <button class="detail-btn" onclick="toggleDetail(this)">
+                                <span>Estructuras Metálicas</span> <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="detail-text">Autosoportadas, Ventadas, Monopolos y Camufladas.</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1;"><img src="https://images.unsplash.com/photo-1574689049597-7e6df3e2b024?q=80&w=2070" style="width: 100%;"></div>
+            </div>
+
+            <div id="tab3" class="tab-content">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3>CONECTIVIDAD <span style="color: #009A44;">TOTAL</span></h3>
+                    <p style="color: #ccc; margin-bottom: 20px;">Redes dorsales y última milla.</p>
+                    <div class="details-accordion">
+                        <div class="detail-item">
+                            <button class="detail-btn" onclick="toggleDetail(this)">
+                                <span>Planta Externa</span> <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="detail-text">Tendido Aéreo ADSS y Soterrado con microzanjado.</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1;"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069" style="width: 100%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark" style="background: #000;">
+        <div class="section-header-center"><h2>NUESTRO PROCESO</h2></div>
+        <div class="process-grid">
+            <div class="process-step">
+                <i class="fas fa-clipboard-list"></i>
+                <h4 style="color: white;">1. INGENIERÍA</h4>
+                <p style="color: #888;">Site Survey y Planos.</p>
+            </div>
+            <div class="process-step">
+                <i class="fas fa-truck-fast"></i>
+                <h4 style="color: white;">2. LOGÍSTICA</h4>
+                <p style="color: #888;">Despliegue.</p>
+            </div>
+            <div class="process-step">
+                <i class="fas fa-hammer"></i>
+                <h4 style="color: white;">3. EJECUCIÓN</h4>
+                <p style="color: #888;">Construcción.</p>
+            </div>
+            <div class="process-step">
+                <i class="fas fa-file-circle-check"></i>
+                <h4 style="color: white;">4. ENTREGA</h4>
+                <p style="color: #888;">Dossier.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #000; padding: 60px 5%; text-align: center; border-top: 1px solid #222;">
+        <h2 style="color: white; font-family: Impact, sans-serif; margin-bottom: 40px; letter-spacing: 2px;">EQUIPAMIENTO PROPIO</h2>
+        <div style="display: flex; justify-content: center; gap: 30px; margin-top: 40px; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <i class="fas fa-truck-pickup" style="font-size: 3rem; color: #333;"></i>
+                <p style="color: #666; margin-top: 10px;">FLOTA 4X4</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fas fa-truck-monster" style="font-size: 3rem; color: #333;"></i>
+                <p style="color: #666; margin-top: 10px;">GRÚAS</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fas fa-hammer" style="font-size: 3rem; color: #333;"></i>
+                <p style="color: #666; margin-top: 10px;">MAQUINARIA</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-dark"><div class="footer-copy">&copy; 2026 MPC.</div></footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabBtn;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) tabContent[i].classList.remove("active");
+            tabBtn = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtn.length; i++) tabBtn[i].classList.remove("active");
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        function toggleDetail(btn) { btn.parentElement.classList.toggle("open"); }
+    </script>
+</body>
+</html>

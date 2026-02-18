@@ -4,202 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPC Perú | Ingeniería & Construcción</title>
-    
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/inicio.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo-box">
-           <img src="assets/img/logo.png" alt="MPC" class="logo">
+            <img src="assets/img/logo.jpg" alt="MPC" class="logo-bg-fix">
             <span class="logo-text">MPC <span class="green-dot">.</span></span>
         </div>
         <ul class="menu">
-            <li><a href="#inicio" class="active">INICIO</a></li>
-            <li><a href="#servicios">CAPACIDADES</a></li>
-            <li><a href="#nosotros">LA EMPRESA</a></li>
-            <li><a href="#proyectos">OBRAS</a></li>
-            
+            <li><a href="index.html" class="active">INICIO</a></li>
+            <li><a href="pages/servicios.html">CAPACIDADES</a></li>
+            <li><a href="pages/nosotros.html">LA EMPRESA</a></li>
+            <li><a href="pages/proyectos.html">OBRAS</a></li>
             <li><a href="pages/contacto.html" class="cta-button">COTIZAR</a></li>
         </ul>
     </nav>
 
-    <header id="inicio" class="hero-interactive">
+    <header class="hero-interactive">
         <div class="hero-overlay"></div>
         <div class="hero-container">
             <div class="line-deco"></div>
-            <h1 class="slide-in">INGENIERÍA QUE <br> <span class="outline-text">DESAFÍA LA GEOGRAFÍA</span></h1>
-            <p class="fade-in">Ejecución de obra civil, infraestructura móvil y despliegue de fibra óptica en los terrenos más complejos del Perú.</p>
-            
+            <h1 class="slide-in">INGENIERÍA <span class="outline-text">TOTAL</span></h1>
+            <p class="fade-in" style="font-size: 1.5rem;">Soluciones extremas para terrenos extremos.</p>
             <div class="hero-stats-row fade-in-delay">
-                <div class="stat-item">
-                    <span class="stat-num">+10 AÑOS</span>
-                    <span class="stat-desc">Experiencia Regional</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">ISO 9001</span>
-                    <span class="stat-desc">Calidad Certificada</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">100%</span>
-                    <span class="stat-desc">Seguridad (HSE)</span>
-                </div>
+                <div class="stat-item"><span class="stat-num">+10 AÑOS</span><span class="stat-desc">Experiencia Nacional</span></div>
+                <div class="stat-item"><span class="stat-num">ISO 9001</span><span class="stat-desc">Gestión de Calidad</span></div>
+                <div class="stat-item"><span class="stat-num">100%</span><span class="stat-desc">Seguridad (HSE)</span></div>
             </div>
         </div>
-        <a href="#servicios" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+        <a href="#intro" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
     </header>
 
-    <section id="servicios" class="capabilities section-dark">
+    <div class="clients-section">
+        <p style="color: #666; font-size: 0.9rem; letter-spacing: 3px; margin-bottom: 30px; text-transform: uppercase;">Confían en nuestra operativa</p>
+        <div class="clients-grid">
+            <i class="fas fa-tower-cell" title="Telecomunicaciones"></i>
+            <i class="fas fa-industry" title="Minería"></i>
+            <i class="fas fa-bolt" title="Energía"></i>
+            <i class="fas fa-building-columns" title="Gobierno"></i>
+            <i class="fas fa-network-wired" title="Internet"></i>
+        </div>
+    </div>
+
+    <section id="intro" class="section-dark reveal">
+        <div style="display: flex; gap: 80px; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1;">
+                <span class="sub-tag">SOBRE MPC</span>
+                <h2 style="line-height: 1.1;">BRAZO EJECUTOR DE <br><span style="color: #009A44;">INFRAESTRUCTURA</span></h2>
+                <br>
+                <p style="color: #ccc; font-size: 1.2rem; line-height: 1.6;">
+                    No somos consultores de escritorio. Somos ingenieros de campo. Entendemos que una torre sin energía no sirve, y que una fibra sin permisos municipales es un riesgo.
+                </p>
+                <p style="color: #888; margin-top: 20px; font-size: 1rem;">
+                    Combinamos maquinaria pesada propia, cuadrillas especializadas y una gerencia de proyectos estricta para entregar obras llave en mano en los plazos acordados.
+                </p>
+                <br>
+                <a href="pages/nosotros.html" class="link-arrow" style="font-size: 1.1rem;">CONOCE NUESTRA HISTORIA <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div style="flex: 1;">
+                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2009" style="width: 100%; border-radius: 4px; filter: grayscale(100%); border-bottom: 5px solid #009A44; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark reveal" style="background: #0a0a0a;">
         <div class="section-header-left">
-            <span class="sub-tag">NUESTRAS DIVISIONES</span>
+            <span class="sub-tag">DIVISIONES</span>
             <h2>CAPACIDAD OPERATIVA</h2>
         </div>
-
         <div class="cards-interactive-grid">
             <div class="card-inter">
                 <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070');"></div>
                 <div class="card-content">
                     <i class="fas fa-trowel-bricks"></i>
                     <h3>OBRA CIVIL</h3>
-                    <p>Construcción de bases de concreto, canalización subterránea, cámaras de inspección y adecuación de terrenos.</p>
-                    <a href="#" class="link-arrow">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                    <p>Cimentaciones, losas, muros de contención y adecuación de terrenos complejos.</p>
                 </div>
             </div>
             <div class="card-inter">
                 <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1574689049597-7e6df3e2b024?q=80&w=2070');"></div>
                 <div class="card-content">
-                    <i class="fas fa-tower-observation"></i>
-                    <h3>TORRES & MONTAJE</h3>
-                    <p>Instalación de torres ventadas y autosoportadas. Mantenimiento de infraestructura vertical y reforzamiento estructural.</p>
-                    <a href="#" class="link-arrow">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h3>TORRES</h3>
+                    <p>Montaje, mantenimiento, pintura y reforzamiento estructural de sitios móviles.</p>
                 </div>
             </div>
             <div class="card-inter">
                 <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069');"></div>
                 <div class="card-content">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>PLANTA EXTERNA</h3>
-                    <p>Tendido de fibra óptica aérea y soterrada. Fusión, certificación y gestión de permisos municipales.</p>
-                    <a href="#" class="link-arrow">Ver Detalles <i class="fas fa-arrow-right"></i></a>
+                    <i class="fas fa-network-wired"></i>
+                    <h3>FIBRA ÓPTICA</h3>
+                    <p>Planta externa, tendido aéreo/soterrado, fusión y certificación.</p>
                 </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="pages/servicios.html" class="btn-outline-green">VER CATÁLOGO TÉCNICO</a>
+        </div>
+    </section>
+
+    <section class="map-section reveal">
+        <div class="map-visual">
+            <i class="fas fa-earth-americas"></i>
+        </div>
+        <div class="map-text">
+            <span class="sub-tag">LOGÍSTICA NACIONAL</span>
+            <h2 style="color: white; margin-bottom: 30px;">¿DÓNDE OPERAMOS?</h2>
+            
+            <div class="map-selector">
+                <div class="region-btn active" onclick="showRegion('costa', this)">COSTA</div>
+                <div class="region-btn" onclick="showRegion('sierra', this)">SIERRA</div>
+                <div class="region-btn" onclick="showRegion('selva', this)">SELVA</div>
+            </div>
+
+            <div id="costa" class="region-content active">
+                <h3 style="color: white; font-size: 2rem;">BASE PIURA / LIMA</h3>
+                <p style="color: #ccc; margin-top: 15px; font-size: 1.1rem;">Especialistas en suelos arenosos y zonas sísmicas. Despliegue rápido a través de la Panamericana.</p>
+                <ul style="margin-top: 15px; color: #888;">
+                    <li>• Almacenes en Lurín y Chiclayo.</li>
+                    <li>• Flota ligera para acceso urbano.</li>
+                </ul>
+            </div>
+            
+            <div id="sierra" class="region-content">
+                <h3 style="color: white; font-size: 2rem;">BASE CUSCO / HUANCAYO</h3>
+                <p style="color: #ccc; margin-top: 15px; font-size: 1.1rem;">Logística de altura (+4000 msnm). Uso de concreto con aditivos acelerantes y personal aclimatado.</p>
+            </div>
+
+            <div id="selva" class="region-content">
+                <h3 style="color: white; font-size: 2rem;">BASE IQUITOS / PUCALLPA</h3>
+                <p style="color: #ccc; margin-top: 15px; font-size: 1.1rem;">Transporte fluvial y aéreo. Manejo de lluvias extremas y protección anticorrosiva.</p>
             </div>
         </div>
     </section>
 
-    <section id="nosotros" class="about-dark-section">
-        <div class="about-grid">
-            <div class="about-content">
-                <span class="sub-tag">SOBRE MPC</span>
-                <h2>BRAZO EJECUTOR DE <span class="text-green">INFRAESTRUCTURA</span></h2>
-                <p class="big-p">No somos consultores de escritorio. Somos ingenieros de campo.</p>
-                <p>Nacimos para resolver la brecha de infraestructura en la región. Combinamos maquinaria pesada propia, cuadrillas especializadas y una gerencia de proyectos estricta para entregar obras llave en mano.</p>
-                
-                <div class="tech-list">
-                    <div class="tech-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Flota Vehicular Propia</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Certificación HSE Homologada</span>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Cobertura Nacional (Costa, Sierra, Selva)</span>
-                    </div>
-                </div>
-            </div>
-            <div class="about-visual">
-                <div class="visual-box">
-                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070" alt="Ingeniero en obra">
-                    <div class="floating-stat">
-                        <strong>+500km</strong>
-                        <span>Infraestructura Construida</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="tech-specs-bar">
-        <div class="spec-item">
-            <i class="fas fa-helmet-safety"></i>
-            <h4>CERO ACCIDENTES</h4>
-            <p>Política de seguridad industrial estricta.</p>
-        </div>
-        <div class="spec-item">
-            <i class="fas fa-stopwatch"></i>
-            <h4>SLA GARANTIZADO</h4>
-            <p>Penalidades por retraso = 0 en historial.</p>
-        </div>
-        <div class="spec-item">
-            <i class="fas fa-file-signature"></i>
-            <h4>PERMISOLOGÍA</h4>
-            <p>Gestión municipal y licencias incluidas.</p>
-        </div>
-    </section>
-
-    <section id="proyectos" class="featured-projects section-dark">
+    <section class="section-dark reveal">
         <div class="section-header-center">
+            <span class="sub-tag">PORTAFOLIO</span>
             <h2>ÚLTIMAS EJECUCIONES</h2>
-            <div class="green-line-center"></div>
         </div>
-
         <div class="project-slider">
             <div class="feat-project">
                 <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=2074" class="p-bg">
-                <div class="p-overlay">
-                    <span class="p-cat">FIBRA ÓPTICA</span>
-                    <h3>Dorsal Sur - 120km</h3>
-                    <p>Tendido ADSS en zona desértica (Arequipa).</p>
-                </div>
+                <div class="p-overlay"><span class="p-cat">FIBRA</span><h3>Dorsal Sur</h3></div>
             </div>
             <div class="feat-project">
                 <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2070" class="p-bg">
-                <div class="p-overlay">
-                    <span class="p-cat">TORRES</span>
-                    <h3>Estación Base 4G</h3>
-                    <p>Montaje de torre autosoportada en Selva (Loreto).</p>
-                </div>
+                <div class="p-overlay"><span class="p-cat">TORRES</span><h3>Base Selva</h3></div>
             </div>
             <div class="feat-project">
                 <img src="https://images.unsplash.com/photo-1558494949-ef526b0042a0?q=80&w=2070" class="p-bg">
-                <div class="p-overlay">
-                    <span class="p-cat">DATA CENTER</span>
-                    <h3>Adecuación de Nodos</h3>
-                    <p>Obra civil y eléctrica para shelters en Cusco.</p>
-                </div>
+                <div class="p-overlay"><span class="p-cat">NODOS</span><h3>Data Center</h3></div>
             </div>
         </div>
-        
-        <div class="center-btn">
-            <a href="pages/proyectos.html" class="btn-outline-green">VER TODO EL PORTAFOLIO</a>
-        </div>
+    </section>
+
+    <section class="tech-specs-bar reveal">
+        <div class="spec-item"><i class="fas fa-helmet-safety"></i><h4>CERO ACCIDENTES</h4><p>Política estricta G.050</p></div>
+        <div class="spec-item"><i class="fas fa-stopwatch"></i><h4>SLA GARANTIZADO</h4><p>Entregas sin retrasos</p></div>
+        <div class="spec-item"><i class="fas fa-file-signature"></i><h4>PERMISOLOGÍA</h4><p>Licencias incluidas</p></div>
+    </section>
+
+    <section class="emergency-cta reveal">
+        <h2>¿INCIDENCIA CRÍTICA?</h2>
+        <p style="font-size: 1.3rem; max-width: 700px; margin: 20px auto; color: #eee;">
+            Contamos con cuadrillas de emergencia 24/7 para reparaciones de fibra óptica y mantenimiento correctivo de torres caídas.
+        </p>
+        <a href="pages/contacto.html" class="btn-black">CONTACTAR SOPORTE URGENTE</a>
     </section>
 
     <footer class="footer-dark">
         <div class="footer-inner">
-            <div class="f-logo">
-                <h3>MPC PERÚ</h3>
-                <p class="f-slogan">INGENIERÍA SIN LÍMITES</p>
-            </div>
-            <div class="f-data">
-                <p>Calle Los Eucaliptos 555, San Isidro, Lima.</p>
-                <p>+51 987 654 321 | proyectos@mpc-peru.com</p>
-            </div>
+            <div class="f-logo"><h3>MPC PERÚ</h3><p style="color: #666;">Ingeniería sin límites.</p></div>
+            <div class="f-data"><p>Calle Los Eucaliptos 555, San Isidro, Lima.</p><p>proyectos@mpc-peru.com</p></div>
         </div>
-        <div class="footer-copy">
-            &copy; 2026 MPC Multiprojects & Constructions. Filial Perú.
-        </div>
+        <div class="footer-copy">&copy; 2026 MPC Multiprojects.</div>
     </footer>
 
     <script>
-        if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
-        window.onload = function() { window.scrollTo(0, 0); };
+        function showRegion(id, btn) {
+            document.querySelectorAll('.region-content').forEach(d => d.classList.remove('active'));
+            document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            btn.classList.add('active');
+        }
+        // SCROLL REVEAL SCRIPT
+        window.addEventListener('scroll', reveal);
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+            for(var i = 0; i < reveals.length; i++){
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+                if(revealtop < windowheight - revealpoint){
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        reveal(); // Trigger on load
     </script>
-
 </body>
 </html>

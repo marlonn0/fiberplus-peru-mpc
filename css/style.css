@@ -1,51 +1,215 @@
-/* --- FUENTES Y VARIABLES GLOBALES --- */
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;600;700&family=Rajdhani:wght@300;500;700&display=swap');
-
+/* =========================================
+   1. CONFIGURACIÓN CORE Y VARIABLES
+   ========================================= */
 :root {
-    --mpc-green: #4caf50;
-    --mpc-dark: #0f0f0f;
-    --mpc-gray: #1a1a1a;
-    --text-white: #e0e0e0;
-    --font-title: 'Teko', sans-serif;
-    --font-body: 'Rajdhani', sans-serif;
+    --mpc-green: #009A44;    /* Verde Principal */
+    --mpc-green-glow: rgba(0, 154, 68, 0.4);
+    --mpc-dark: #080808;     /* Negro Fondo */
+    --mpc-black-pure: #000000;
+    --mpc-gray-light: #f4f4f4;
+    --mpc-gray-text: #cccccc;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-title: 'Impact', sans-serif;
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background-color: var(--mpc-dark); color: var(--text-white); font-family: var(--font-body); overflow-x: hidden; }
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; }
 
-/* --- NAVBAR GLOBAL --- */
-.navbar {
-    position: fixed; top: 0; width: 100%; z-index: 1000;
-    padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
-    background: rgba(15, 15, 15, 0.95); border-bottom: 1px solid rgba(255,255,255,0.1);
+body {
+    font-family: var(--font-main);
+    background-color: var(--mpc-dark);
+    color: var(--mpc-gray-text);
+    overflow-x: hidden;
+    line-height: 1.6;
+    /* TEXTURA DE FONDO TECNOLÓGICA (GRID) */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-attachment: fixed;
 }
-.solid-nav { background: var(--mpc-dark); border-bottom: 1px solid #333; }
 
-.logo { height: 45px; vertical-align: middle; border-radius: 4px; }
-.logo-text { font-family: var(--font-title); font-size: 1.8rem; font-weight: 700; margin-left: 10px; color: white; vertical-align: middle; }
-.green-dot { color: var(--mpc-green); font-size: 2.5rem; line-height: 0; }
+/* =========================================
+   2. EFECTOS DE TEXTO (METÁLICO Y GLOW)
+   ========================================= */
+@keyframes shineMove {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
 
-.menu { display: flex; gap: 30px; }
-.menu a { font-weight: 600; text-transform: uppercase; color: white; }
-.menu a:hover, .menu a.active { color: var(--mpc-green); }
+h1, h2, h3 {
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    /* Efecto Metálico que se mueve solo */
+    background: linear-gradient(90deg, #444 0%, #fff 50%, #444 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shineMove 5s linear infinite;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+}
 
-.cta-button { border: 1px solid var(--mpc-green); padding: 8px 20px; color: var(--mpc-green) !important; }
-.cta-button:hover { background: var(--mpc-green); color: black !important; }
+/* =========================================
+   3. NAVEGACIÓN PREMIUM
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 85px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px); /* Efecto cristalizado */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition-fast);
+}
 
-/* --- FOOTER GLOBAL --- */
-.footer-dark { background: #050505; padding: 60px 5% 20px; border-top: 1px solid #222; }
-.footer-inner { display: flex; justify-content: space-between; border-bottom: 1px solid #222; padding-bottom: 40px; margin-bottom: 20px; }
-.f-logo h3 { font-family: var(--font-title); font-size: 2.5rem; color: white; margin: 0; }
-.f-slogan { color: var(--mpc-green); letter-spacing: 2px; }
-.f-data { text-align: right; color: #666; }
-.footer-copy { text-align: center; color: #444; font-size: 0.8rem; }
+.logo-box { display: flex; align-items: center; gap: 15px; }
+.logo-bg-fix { 
+    background-color: white; 
+    padding: 6px; 
+    border-radius: 6px; 
+    height: 55px; 
+    box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+.logo-text { 
+    font-family: var(--font-title); 
+    font-size: 2rem; 
+    color: white; 
+    letter-spacing: 2px;
+}
+.green-dot { color: var(--mpc-green); }
 
-/* RESPONSIVE GLOBAL */
+.menu { display: flex; list-style: none; gap: 35px; align-items: center; }
+.menu a { 
+    text-decoration: none; 
+    color: #ffffff; 
+    font-weight: 700; 
+    font-size: 0.85rem; 
+    letter-spacing: 1.5px;
+    transition: var(--transition-fast);
+    position: relative;
+    text-transform: uppercase;
+}
+.menu a::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+    background: var(--mpc-green); transition: var(--transition-fast);
+}
+.menu a:hover::after, .menu a.active::after { width: 100%; }
+.menu a:hover { color: var(--mpc-green); }
+
+/* Botón Cotizar */
+.cta-button { 
+    background: transparent; 
+    border: 2px solid var(--mpc-green); 
+    color: var(--mpc-green) !important; 
+    padding: 10px 28px; 
+    border-radius: 50px; 
+    font-weight: 900;
+    box-shadow: 0 0 0 var(--mpc-green-glow);
+}
+.cta-button:hover { 
+    background: var(--mpc-green); 
+    color: white !important; 
+    box-shadow: 0 0 20px var(--mpc-green-glow);
+    transform: scale(1.05);
+}
+
+/* =========================================
+   4. ESTRUCTURA DE SECCIONES GLOBAL
+   ========================================= */
+.section-dark { 
+    padding: 120px 8%; 
+    background: transparent; 
+    position: relative; 
+}
+
+/* Headers de sección */
+.section-header-center { text-align: center; margin-bottom: 80px; }
+.section-header-left { 
+    margin-bottom: 70px; 
+    border-left: 6px solid var(--mpc-green); 
+    padding-left: 35px; 
+}
+.sub-tag { 
+    color: var(--mpc-green); 
+    font-weight: 800; 
+    letter-spacing: 5px; 
+    font-size: 0.85rem; 
+    display: block; 
+    margin-bottom: 20px; 
+    text-transform: uppercase;
+}
+
+/* Botones genéricos */
+.center-btn { text-align: center; margin-top: 60px; }
+.btn-outline-green {
+    display: inline-block;
+    padding: 18px 45px;
+    border: 2px solid var(--mpc-green);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.4s;
+}
+.btn-outline-green:hover { background: var(--mpc-green); box-shadow: 0 0 25px var(--mpc-green-glow); }
+
+/* =========================================
+   5. ANIMACIÓN REVEAL (SCROLL)
+   ========================================= */
+.reveal { 
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: var(--transition-slow); 
+}
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* =========================================
+   6. FOOTER COMPLETO
+   ========================================= */
+.footer-dark { 
+    background: var(--mpc-black-pure); 
+    color: white; 
+    padding: 90px 8% 30px; 
+    border-top: 1px solid rgba(255,255,255,0.05); 
+}
+.footer-inner { 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    gap: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    padding-bottom: 60px;
+}
+.footer-logo h3 { background: none; -webkit-text-fill-color: white; color: white; font-size: 2rem; animation: none; }
+.footer-logo p { color: var(--mpc-green); font-weight: bold; letter-spacing: 2px; }
+.footer-copy { 
+    text-align: center; 
+    color: #444; 
+    font-size: 0.8rem; 
+    margin-top: 40px;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   7. RESPONSIVE
+   ========================================= */
 @media (max-width: 900px) {
-    .menu { display: none; }
-    .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
-    .f-data { text-align: center; }
+    .navbar { height: 75px; padding: 0 20px; }
+    .menu { display: none; } /* Aquí podrías poner un menú hamburguesa luego */
+    .section-dark { padding: 80px 20px; }
+    h2 { font-size: 2.5rem; }
+    .footer-inner { flex-direction: column; text-align: center; }
 }
