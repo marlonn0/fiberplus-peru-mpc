@@ -5,13 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPC Perú | Ingeniería & Construcción</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inicio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Arreglos directos para dimensiones y botones */
+        :root {
+            --mpc-green: #009A44;
+        }
+
+        /* Corregir que los botones no se pongan morados (visitados) */
+        .btn-outline-green, .cta-button, .btn-black, .link-arrow {
+            text-decoration: none !important;
+        }
+
+        .btn-outline-green {
+            border: 2px solid var(--mpc-green);
+            color: var(--mpc-green) !important;
+            padding: 12px 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            display: inline-block;
+            background: transparent;
+        }
+
+        .btn-outline-green:hover {
+            background: var(--mpc-green);
+            color: white !important;
+        }
+
+        /* Ajuste de dimensiones del Hero para evitar desbordes */
+        .hero-interactive {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Ajuste de imágenes de divisiones para que no se deformen */
+        .card-inter {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-bg {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: 0.5s;
+        }
+        
+        /* Ajuste del Footer para el nuevo correo */
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo-box">
-            <img src="assets/img/logo.jpg" alt="MPC" class="logo-bg-fix">
+            <img src="assets/img/logo.png" alt="MPC" class="logo-bg-fix">
             <span class="logo-text">MPC <span class="green-dot">.</span></span>
         </div>
         <ul class="menu">
@@ -28,7 +87,7 @@
         <div class="hero-container">
             <div class="line-deco"></div>
             <h1 class="slide-in">INGENIERÍA <span class="outline-text">TOTAL</span></h1>
-            <p class="fade-in" style="font-size: 1.5rem;">Soluciones extremas para terrenos extremos.</p>
+            <p class="fade-in" style="font-size: 1.5rem; color: white;">Soluciones extremas para terrenos extremos.</p>
             <div class="hero-stats-row fade-in-delay">
                 <div class="stat-item"><span class="stat-num">+10 AÑOS</span><span class="stat-desc">Experiencia Nacional</span></div>
                 <div class="stat-item"><span class="stat-num">ISO 9001</span><span class="stat-desc">Gestión de Calidad</span></div>
@@ -50,22 +109,22 @@
     </div>
 
     <section id="intro" class="section-dark reveal">
-        <div style="display: flex; gap: 80px; align-items: center; flex-wrap: wrap;">
-            <div style="flex: 1;">
+        <div class="intro-layout">
+            <div class="intro-text-content">
                 <span class="sub-tag">SOBRE MPC</span>
-                <h2 style="line-height: 1.1;">BRAZO EJECUTOR DE <br><span style="color: #009A44;">INFRAESTRUCTURA</span></h2>
-                <br>
-                <p style="color: #ccc; font-size: 1.2rem; line-height: 1.6;">
+                <h2>BRAZO EJECUTOR DE <br><span style="color: #009A44;">INFRAESTRUCTURA</span></h2>
+                
+                <p class="intro-lead">
                     No somos consultores de escritorio. Somos ingenieros de campo. Entendemos que una torre sin energía no sirve, y que una fibra sin permisos municipales es un riesgo.
                 </p>
-                <p style="color: #888; margin-top: 20px; font-size: 1rem;">
-                    Combinamos maquinaria pesada propia, cuadrillas especializadas y una gerencia de proyectos estricta para entregar obras llave en mano en los plazos acordados.
+                <p class="intro-desc">
+                    Combinamos maquinaria pesada propia, cuadrillas especializadas y una gerencia de proyectos estricta para entregar obras llave en mano en los plazos acordados, sin intermediarios ni excusas.
                 </p>
-                <br>
-                <a href="pages/nosotros.html" class="link-arrow" style="font-size: 1.1rem;">CONOCE NUESTRA HISTORIA <i class="fas fa-arrow-right"></i></a>
+                
+                <a href="pages/nosotros.html" class="link-arrow">CONOCE NUESTRA HISTORIA <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div style="flex: 1;">
-                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2009" style="width: 100%; border-radius: 4px; filter: grayscale(100%); border-bottom: 5px solid #009A44; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            <div class="intro-img-box">
+                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2009" alt="MPC Operaciones">
             </div>
         </div>
     </section>
@@ -123,7 +182,7 @@
             <div id="costa" class="region-content active">
                 <h3 style="color: white; font-size: 2rem;">BASE PIURA / LIMA</h3>
                 <p style="color: #ccc; margin-top: 15px; font-size: 1.1rem;">Especialistas en suelos arenosos y zonas sísmicas. Despliegue rápido a través de la Panamericana.</p>
-                <ul style="margin-top: 15px; color: #888;">
+                <ul style="margin-top: 15px; color: #888; list-style: none; padding: 0;">
                     <li>• Almacenes en Lurín y Chiclayo.</li>
                     <li>• Flota ligera para acceso urbano.</li>
                 </ul>
@@ -173,16 +232,43 @@
         <p style="font-size: 1.3rem; max-width: 700px; margin: 20px auto; color: #eee;">
             Contamos con cuadrillas de emergencia 24/7 para reparaciones de fibra óptica y mantenimiento correctivo de torres caídas.
         </p>
-        <a href="pages/contacto.html" class="btn-black">CONTACTAR SOPORTE URGENTE</a>
+        <a href="pages/contacto.html" class="btn-black" style="display: inline-block; padding: 15px 30px; background: black; color: white; text-decoration: none; font-weight: bold;">CONTACTAR SOPORTE URGENTE</a>
     </section>
 
     <footer class="footer-dark">
         <div class="footer-inner">
-            <div class="f-logo"><h3>MPC PERÚ</h3><p style="color: #666;">Ingeniería sin límites.</p></div>
-            <div class="f-data"><p>Calle Los Eucaliptos 555, San Isidro, Lima.</p><p>proyectos@mpc-peru.com</p></div>
+            <div class="f-logo">
+                <h3>MPC PERÚ</h3>
+                <p style="color: #666; margin-bottom: 20px;">Ingeniería sin límites.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/multiprojectsconstructions?igsh=MXViaGZma2V5OWxvag==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@multiproject.cons?_r=1&_t=ZS-94270UtsR0e" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="f-contact-info">
+                <h4>CONTACTO DIRECTO</h4>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+51962306887">+51 962 306 887</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:mpalacios@mpconstruction.pe">mpalacios@mpconstruction.pe</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Operatividad en todo el Perú.</span>
+                </div>
+            </div>
         </div>
         <div class="footer-copy">&copy; 2026 MPC Multiprojects.</div>
     </footer>
+
+    <a href="https://wa.me/51962306887?text=Hola%20MPC%20Per%C3%BA,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios." class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         function showRegion(id, btn) {
@@ -191,20 +277,19 @@
             document.getElementById(id).classList.add('active');
             btn.classList.add('active');
         }
-        // SCROLL REVEAL SCRIPT
+        
         window.addEventListener('scroll', reveal);
         function reveal(){
             var reveals = document.querySelectorAll('.reveal');
             for(var i = 0; i < reveals.length; i++){
                 var windowheight = window.innerHeight;
                 var revealtop = reveals[i].getBoundingClientRect().top;
-                var revealpoint = 150;
-                if(revealtop < windowheight - revealpoint){
+                if(revealtop < windowheight - 150){
                     reveals[i].classList.add('active');
                 }
             }
         }
-        reveal(); // Trigger on load
+        reveal();
     </script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+/* =========================================
+   ESTILOS EXCLUSIVOS: OBRAS / PROYECTOS
+   ========================================= */
+
+/* HERO */
+.hero-internal {
+    height: 50vh; width: 100%; min-height: 400px;
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    border-bottom: 4px solid var(--mpc-green);
+    position: relative;
+}
+.bg-proyectos {
+    background-image: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.95) 100%), 
+                      url('https://images.unsplash.com/photo-1498084393753-b411b2d26b34?q=80&w=1932');
+}
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
+.hero-container { position: relative; z-index: 2; }
+.hero-container h1 { font-size: 5rem; letter-spacing: 5px; }
+.outline-text { -webkit-text-stroke: 2px white; color: transparent; background: none; -webkit-background-clip: initial; }
+
+/* FILTROS */
+.filter-buttons { text-align: center; margin-bottom: 50px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.filter-btn { 
+    background: transparent; border: 1px solid #333; color: #888; 
+    padding: 12px 30px; cursor: pointer; font-weight: bold; transition: 0.3s; 
+    text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
+}
+.filter-btn:hover, .filter-btn.active { 
+    background: var(--mpc-green); color: white; border-color: var(--mpc-green); box-shadow: 0 0 15px rgba(0,154,68,0.3);
+}
+
+/* GRID DE PROYECTOS */
+.project-slider { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 25px; 
+    min-height: 500px; /* Evita que la sección colapse */
+}
+.feat-project { 
+    height: 350px; position: relative; overflow: hidden; 
+    border: 1px solid #222; border-radius: 4px; cursor: pointer;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.p-bg { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; filter: grayscale(100%); }
+.feat-project:hover .p-bg { transform: scale(1.1); filter: grayscale(0%); }
+
+.p-overlay { 
+    position: absolute; bottom: 0; left: 0; width: 100%; 
+    padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); 
+    transform: translateY(20px); transition: 0.4s;
+}
+.feat-project:hover .p-overlay { transform: translateY(0); }
+.p-cat { 
+    color: var(--mpc-green); font-size: 0.75rem; font-weight: bold; 
+    letter-spacing: 2px; text-transform: uppercase; background: black; 
+    padding: 5px 10px; display: inline-block; margin-bottom: 10px; border: 1px solid var(--mpc-green);
+}
+.feat-project h3 { color: white; font-size: 1.5rem; margin: 0; font-family: 'Impact', sans-serif; letter-spacing: 1px; }
+
+/* Animación de Filtrado */
+.project-item.hide { display: none; opacity: 0; transform: scale(0.9); }
+.project-item.show { display: block; opacity: 1; transform: scale(1); animation: fadeIn 0.5s forwards; }
+
+/* CASO DE ÉXITO (TICLIO) */
+.case-study-section { 
+    background: #080808; padding: 100px 5%; border-top: 1px solid #222; 
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* Textura sutil opcional */
+}
+.case-grid { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
+.tech-sheet { background: #111; padding: 40px; border: 1px solid #333; border-left: 4px solid var(--mpc-green); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.sheet-row { 
+    display: flex; justify-content: space-between; border-bottom: 1px solid #222; 
+    padding: 15px 0; color: #ccc; font-size: 1rem; 
+}
+.sheet-row span:first-child { font-weight: bold; color: #888; text-transform: uppercase; }
+.sheet-row span:last-child { color: white; font-weight: bold; }
+
+/* NUEVO: ESTADÍSTICAS DE IMPACTO */
+.impact-bar { 
+    background: var(--mpc-green); padding: 60px 5%; 
+    display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; text-align: center; 
+}
+.impact-item h2 { font-size: 3.5rem; color: white; margin: 0; line-height: 1; text-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+.impact-item p { color: #004d22; font-weight: 900; letter-spacing: 2px; margin-top: 10px; text-transform: uppercase; }
+
+/* NUEVO: CTA FINAL */
+.cta-project { text-align: center; padding: 80px 5%; background: #000; border-top: 1px solid #333; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .case-grid { flex-direction: column; }
+    .hero-container h1 { font-size: 3.5rem; }
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

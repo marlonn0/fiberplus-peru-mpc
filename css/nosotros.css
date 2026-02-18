@@ -1,0 +1,101 @@
+/* =========================================
+   ESTILOS EXCLUSIVOS: NOSOTROS / EMPRESA
+   ========================================= */
+
+/* HERO */
+.hero-internal {
+    height: 50vh; width: 100%; min-height: 400px;
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    border-bottom: 4px solid var(--mpc-green);
+    position: relative;
+}
+.bg-nosotros {
+    background-image: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.95) 100%), 
+                      url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070');
+}
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1; }
+.hero-container { position: relative; z-index: 2; }
+.hero-container h1 { font-size: 5rem; letter-spacing: 5px; margin: 0; }
+.outline-text { -webkit-text-stroke: 2px white; color: transparent; background: none; -webkit-background-clip: initial; }
+
+/* MISIÓN Y VISIÓN (NUEVO) */
+.mv-grid { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
+.mv-card { 
+    flex: 1; background: #111; padding: 40px; 
+    border-top: 4px solid var(--mpc-green); min-width: 300px; 
+    transition: 0.3s;
+}
+.mv-card:hover { transform: translateY(-5px); background: #151515; }
+.mv-card h3 { color: white; font-size: 1.8rem; margin-bottom: 20px; background: none; -webkit-text-fill-color: initial; }
+.mv-card p { color: #ccc; line-height: 1.6; font-size: 1.05rem; }
+
+/* FLIP CARDS (PILARES) */
+.flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 60px; }
+.flip-card { height: 350px; perspective: 1000px; cursor: pointer; }
+.flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: 0.8s; transform-style: preserve-3d; }
+.flip-card:hover .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back { 
+    position: absolute; width: 100%; height: 100%; backface-visibility: hidden; 
+    display: flex; flex-direction: column; align-items: center; justify-content: center; 
+    padding: 20px; border: 1px solid #333; background: #080808;
+}
+.flip-back { background: var(--mpc-green); color: white; transform: rotateY(180deg); }
+.flip-back h3 { background: none; -webkit-text-fill-color: white; }
+
+/* TIMELINE (HISTORIA) */
+.timeline { position: relative; max-width: 800px; margin: 50px auto; }
+.timeline::after { content: ''; position: absolute; width: 4px; background-color: #333; top: 0; bottom: 0; left: 50%; margin-left: -2px; }
+.time-container { padding: 10px 40px; position: relative; width: 50%; }
+.time-left { left: 0; text-align: right; }
+.time-right { left: 50%; }
+.time-content { padding: 30px; background-color: #111; border: 1px solid #333; transition: 0.3s; }
+.time-content:hover { border-color: var(--mpc-green); transform: scale(1.02); }
+.time-content h4 { color: var(--mpc-green); font-size: 1.8rem; margin-bottom: 5px; font-family: 'Impact'; background: none; -webkit-text-fill-color: initial; letter-spacing: 1px; }
+
+/* COMPARATIVA (VS) */
+.comparison-box { display: flex; gap: 50px; margin-top: 60px; flex-wrap: wrap; justify-content: center; }
+.comp-item { 
+    flex: 1; min-width: 350px; padding: 50px 40px; 
+    background: #0a0a0a; border: 1px solid #222; border-radius: 8px; transition: 0.3s; 
+}
+/* Estilo Competencia (Rojo) */
+.comp-item.bad { border-top: 6px solid #b91c1c; opacity: 0.7; }
+.comp-item.bad h3 { color: #b91c1c; font-size: 2rem; margin-bottom: 30px; background: none; -webkit-text-fill-color: initial; }
+.comp-item.bad li i { color: #b91c1c; min-width: 25px; }
+
+/* Estilo MPC (Verde) */
+.comp-item.good { 
+    border-top: 6px solid var(--mpc-green); 
+    background: linear-gradient(145deg, #111, #051a05); 
+    transform: scale(1.05); box-shadow: 0 10px 40px rgba(0,154,68,0.15); 
+    z-index: 2;
+}
+.comp-item.good h3 { color: white; font-size: 2.5rem; margin-bottom: 30px; text-shadow: 0 0 20px var(--mpc-green); background: none; -webkit-text-fill-color: initial; }
+.comp-item.good li i { color: var(--mpc-green); min-width: 25px; }
+
+.comp-list { list-style: none; padding: 0; }
+.comp-list li { margin-bottom: 25px; font-size: 1.1rem; color: #ccc; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
+
+/* ORGANIGRAMA HORIZONTAL */
+.org-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 60px; }
+.org-card { background: #111; border: 1px solid #222; padding: 40px 20px; text-align: center; transition: 0.3s; border-radius: 4px; }
+.org-card:hover { border-color: var(--mpc-green); transform: translateY(-10px); }
+.org-icon { font-size: 3rem; color: var(--mpc-green); margin-bottom: 20px; display: block; }
+.org-card h3 { font-size: 1.4rem; color: white; margin-bottom: 10px; background: none; -webkit-text-fill-color: initial; font-family: 'Impact'; letter-spacing: 1px; }
+
+/* CITA GERENCIA (NUEVO) */
+.quote-box { text-align: center; max-width: 900px; margin: 0 auto; }
+.quote-text { font-size: 1.6rem; color: #ddd; margin-bottom: 30px; font-style: italic; line-height: 1.5; }
+.quote-author { color: var(--mpc-green); font-weight: bold; font-style: normal; letter-spacing: 2px; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .comparison-box { flex-direction: column; }
+    .comp-item.good { transform: scale(1); }
+    .org-grid { grid-template-columns: repeat(2, 1fr); }
+    .timeline::after { left: 31px; }
+    .time-container { width: 100%; padding-left: 70px; text-align: left; }
+    .time-right { left: 0; }
+    .hero-container h1 { font-size: 3.5rem; }
+}

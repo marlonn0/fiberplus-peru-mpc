@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obras | MPC Perú</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/proyectos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo-box"><img src="../assets/img/logo.jpg" class="logo-bg-fix"><span class="logo-text">MPC <span class="green-dot">.</span></span></div>
         <ul class="menu">
@@ -24,39 +26,106 @@
         <div class="hero-container"><h1 class="slide-in">NUESTRA <span class="outline-text">HUELLA</span></h1></div>
     </header>
 
-    <section class="section-dark">
-        <div class="section-header-center"><h2>FILTRAR POR CATEGORÍA</h2></div>
+    <section class="impact-bar reveal">
+        <div class="impact-item">
+            <h2>+2,500</h2>
+            <p>KM DE FIBRA ÓPTICA</p>
+        </div>
+        <div class="impact-item">
+            <h2>+450</h2>
+            <p>SITIOS CONSTRUIDOS</p>
+        </div>
+        <div class="impact-item">
+            <h2>100%</h2>
+            <p>SATISFACCIÓN CLIENTE</p>
+        </div>
+    </section>
+
+    <section class="section-dark reveal">
+        <div class="section-header-center">
+            <span class="sub-tag">PORTAFOLIO</span>
+            <h2>FILTRAR POR CATEGORÍA</h2>
+        </div>
+        
         <div class="filter-buttons">
             <button class="filter-btn active" onclick="filterProjects('all')">VER TODO</button>
             <button class="filter-btn" onclick="filterProjects('fibra')">FIBRA ÓPTICA</button>
             <button class="filter-btn" onclick="filterProjects('civil')">OBRA CIVIL</button>
+            <button class="filter-btn" onclick="filterProjects('torres')">TORRES</button>
         </div>
 
         <div class="project-slider" id="projectGrid">
-            <div class="feat-project project-item fibra"><img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0" class="p-bg"><div class="p-overlay"><span class="p-cat">AREQUIPA</span><h3>Dorsal Sur</h3></div></div>
-            <div class="feat-project project-item civil"><img src="https://images.unsplash.com/photo-1558494949-ef526b0042a0" class="p-bg"><div class="p-overlay"><span class="p-cat">CUSCO</span><h3>Data Center</h3></div></div>
-            <div class="feat-project project-item fibra"><img src="https://images.unsplash.com/photo-1544197150-b99a580bbcbf" class="p-bg"><div class="p-overlay"><span class="p-cat">PIURA</span><h3>FTTH Rural</h3></div></div>
-            <div class="feat-project project-item torres"><img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b" class="p-bg"><div class="p-overlay"><span class="p-cat">LORETO</span><h3>Torre Selva</h3></div></div>
+            <div class="feat-project project-item fibra">
+                <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0" class="p-bg">
+                <div class="p-overlay"><span class="p-cat">AREQUIPA</span><h3>Dorsal Sur</h3></div>
+            </div>
+            <div class="feat-project project-item civil">
+                <img src="https://images.unsplash.com/photo-1558494949-ef526b0042a0" class="p-bg">
+                <div class="p-overlay"><span class="p-cat">CUSCO</span><h3>Data Center</h3></div>
+            </div>
+            <div class="feat-project project-item fibra">
+                <img src="https://images.unsplash.com/photo-1544197150-b99a580bbcbf" class="p-bg">
+                <div class="p-overlay"><span class="p-cat">PIURA</span><h3>FTTH Rural</h3></div>
+            </div>
+            <div class="feat-project project-item torres">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b" class="p-bg">
+                <div class="p-overlay"><span class="p-cat">LORETO</span><h3>Torre Selva</h3></div>
+            </div>
+
+            <div class="feat-project project-item civil">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5" class="p-bg">
+                <div class="p-overlay"><span class="p-cat">LIMA</span><h3>Cimentación Nodo</h3></div>
+            </div>
+            <div class="feat-project project-item torres">
+                <img src="https://images.unsplash.com/photo-1565618820936-22a7df82bb7e" class="p-bg">
+                <div class="p-overlay"><span class="p-cat">TRUJILLO</span><h3>Monopolo 30m</h3></div>
+            </div>
+            <div class="feat-project project-item fibra">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e" class="p-bg">
+                <div class="p-overlay"><span class="p-cat">JUNÍN</span><h3>Empalme OPGW</h3></div>
+            </div>
+            <div class="feat-project project-item civil">
+                <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd" class="p-bg">
+                <div class="p-overlay"><span class="p-cat">TACNA</span><h3>Muro Contención</h3></div>
+            </div>
         </div>
     </section>
 
-    <section style="background: #000; padding: 80px 10%; border-top: 1px solid #222;">
-        <div style="display: flex; gap: 50px; align-items: start; flex-wrap: wrap;">
+    <section class="case-study-section reveal">
+        <div class="case-grid">
             <div style="flex: 2;">
                 <span class="sub-tag">CASO DE ÉXITO</span>
-                <h2 style="color: white; margin-bottom: 20px;">DESAFÍO: <span style="color: #009A44;">TICLIO</span></h2>
-                <p style="color: #ccc;">Instalación a 4,800 m.s.n.m. con temperaturas bajo cero.</p>
-                <p style="color: #ccc;">Utilizamos aditivos acelerantes y concreto premezclado in-situ.</p>
+                <h2 style="color: white; margin-bottom: 20px; font-size: 3rem;">DESAFÍO: <span style="color: #009A44;">TICLIO</span></h2>
+                <p style="color: #ccc; font-size: 1.2rem; margin-bottom: 20px;">
+                    Instalación de nodo de comunicaciones a 4,818 m.s.n.m. en condiciones de clima extremo.
+                </p>
+                <p style="color: #888; font-size: 1rem;">
+                    El reto consistió en el vaciado de concreto en temperaturas bajo cero. Utilizamos aditivos acelerantes de fragua, mantas térmicas y concreto premezclado in-situ con calentamiento de agregados.
+                </p>
+                <br>
+                <div style="display: flex; gap: 30px;">
+                    <div style="text-align: center;"><i class="fas fa-temperature-arrow-down" style="color: #009A44; font-size: 2rem;"></i><p style="color: #666; font-weight: bold;">-15°C</p></div>
+                    <div style="text-align: center;"><i class="fas fa-wind" style="color: #009A44; font-size: 2rem;"></i><p style="color: #666; font-weight: bold;">90 KM/H</p></div>
+                    <div style="text-align: center;"><i class="fas fa-mountain" style="color: #009A44; font-size: 2rem;"></i><p style="color: #666; font-weight: bold;">ROCOSO</p></div>
+                </div>
             </div>
-            <div style="flex: 1; min-width: 250px;">
+            <div style="flex: 1; min-width: 300px;">
                 <div class="tech-sheet">
-                    <h4 style="color: var(--mpc-green); margin-bottom: 15px;">DATOS TÉCNICOS</h4>
+                    <h4 style="color: white; margin-bottom: 20px; font-family: Impact; letter-spacing: 1px;">FICHA DE OBRA</h4>
+                    <div class="sheet-row"><span>Ubicación:</span> <span>Ticlio, Junín</span></div>
                     <div class="sheet-row"><span>Altitud:</span> <span>4,818 m.s.n.m.</span></div>
-                    <div class="sheet-row"><span>Viento:</span> <span>90 km/h</span></div>
-                    <div class="sheet-row"><span>Plazo:</span> <span>21 Días</span></div>
+                    <div class="sheet-row"><span>Cliente:</span> <span>Confidencial</span></div>
+                    <div class="sheet-row"><span>Plazo:</span> <span>21 Días Calendario</span></div>
+                    <div class="sheet-row"><span>Estado:</span> <span style="color: #009A44;">ENTREGADO</span></div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="cta-project reveal">
+        <h2 style="color: white; margin-bottom: 20px;">¿TIENE UN PROYECTO COMPLEJO?</h2>
+        <p style="color: #888; margin-bottom: 30px;">Si podemos construir en Ticlio, podemos construir donde sea.</p>
+        <a href="contacto.html" class="cta-button">COTIZAR PROYECTO</a>
     </section>
 
     <footer class="footer-dark"><div class="footer-copy">&copy; 2026 MPC.</div></footer>
@@ -65,18 +134,40 @@
         function filterProjects(category) {
             var items = document.getElementsByClassName("project-item");
             var btns = document.getElementsByClassName("filter-btn");
+            
+            // Manejo de botones activos
             for (var j = 0; j < btns.length; j++) {
                 btns[j].classList.remove("active");
                 if(btns[j].getAttribute("onclick").includes(category)) btns[j].classList.add("active");
             }
+
+            // Lógica de filtrado
             for (var i = 0; i < items.length; i++) {
-                if (category == 'all') { items[i].classList.remove("hide"); items[i].classList.add("show"); }
-                else {
-                    if (items[i].classList.contains(category)) { items[i].classList.remove("hide"); items[i].classList.add("show"); }
-                    else { items[i].classList.remove("show"); items[i].classList.add("hide"); }
+                if (category == 'all') {
+                    items[i].classList.remove("hide");
+                    items[i].classList.add("show");
+                } else {
+                    if (items[i].classList.contains(category)) {
+                        items[i].classList.remove("hide");
+                        items[i].classList.add("show");
+                    } else {
+                        items[i].classList.remove("show");
+                        items[i].classList.add("hide");
+                    }
                 }
             }
         }
+        
+        // Scroll Reveal
+        window.addEventListener('scroll', function(){ 
+            var reveals = document.querySelectorAll('.reveal'); 
+            for(var i = 0; i < reveals.length; i++){ 
+                if(reveals[i].getBoundingClientRect().top < window.innerHeight - 150){ 
+                    reveals[i].classList.add('active'); 
+                } 
+            } 
+        });
+        window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
 </html>

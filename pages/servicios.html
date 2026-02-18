@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capacidades | MPC Perú</title>
+    <title>Capacidades Técnicas | MPC Perú</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/servicios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo-box"><img src="../assets/img/logo.jpg" class="logo-bg-fix"><span class="logo-text">MPC <span class="green-dot">.</span></span></div>
         <ul class="menu">
@@ -22,123 +24,157 @@
     <header class="hero-internal bg-servicios">
         <div class="hero-overlay"></div>
         <div class="hero-container">
-            <h1 class="slide-in">PORTAFOLIO <span class="outline-text">TÉCNICO</span></h1>
-            <p class="fade-in" style="font-size: 1.2rem; color: #ccc; margin-top: 20px; letter-spacing: 3px; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                SOLUCIONES DE INGENIERÍA Y MONTAJE
-            </p>
+            <h1 class="slide-in">ESPECIFICACIONES <span class="outline-text">TÉCNICAS</span></h1>
+            <p class="fade-in">INGENIERÍA DE DETALLE Y RECURSOS OPERATIVOS</p>
         </div>
     </header>
 
-    <section class="section-dark">
-        <div class="section-header-center"><h2>EXPLORA NUESTRAS DIVISIONES</h2></div>
+    <section class="section-dark reveal">
+        <div class="section-header-center">
+            <span class="sub-tag">DETALLE TÉCNICO</span>
+            <h2>FICHA DE SERVICIOS</h2>
+            <p style="color: #888; max-width: 700px; margin: 0 auto;">
+                Más allá de la construcción, ofrecemos soluciones de ingeniería certificada. Aquí detallamos nuestros estándares operativos.
+            </p>
+        </div>
+
         <div class="tabs-container">
             <div class="tab-header">
                 <button class="tab-btn active" onclick="openTab(event, 'tab1')"><i class="fas fa-trowel-bricks"></i> OBRA CIVIL</button>
-                <button class="tab-btn" onclick="openTab(event, 'tab2')"><i class="fas fa-broadcast-tower"></i> TORRES</button>
-                <button class="tab-btn" onclick="openTab(event, 'tab3')"><i class="fas fa-network-wired"></i> FIBRA ÓPTICA</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab2')"><i class="fas fa-broadcast-tower"></i> METALMECÁNICA</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab3')"><i class="fas fa-network-wired"></i> TELECOMUNICACIONES</button>
             </div>
 
             <div id="tab1" class="tab-content active">
-                <div style="flex: 1; min-width: 300px;">
-                    <h3>INFRAESTRUCTURA <span style="color: #009A44;">PASIVA</span></h3>
-                    <p style="color: #ccc; margin-bottom: 20px;">Especialistas en suelos complejos (Rocoso, Arenoso, Arcilloso).</p>
-                    <div class="details-accordion">
-                        <div class="detail-item">
-                            <button class="detail-btn" onclick="toggleDetail(this)">
-                                <span>Especificaciones Técnicas</span> <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="detail-text">Concreto f'c 210/280 con aditivos acelerantes. Curado químico incluido.</div>
-                        </div>
-                        <div class="detail-item">
-                            <button class="detail-btn" onclick="toggleDetail(this)">
-                                <span>Tipos de Construcción</span> <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="detail-text">Losas, dados, muros de contención y casetas.</div>
-                        </div>
-                    </div>
+                <div class="tab-text-col">
+                    <h3>INFRAESTRUCTURA DE SITIOS</h3>
+                    <p>Ejecución bajo norma E.060 (Concreto Armado) y E.050 (Suelos y Cimentaciones). Especialistas en terrenos agresivos.</p>
+                    
+                    <ul class="tech-specs-list">
+                        <li><span>Concreto:</span> f'c 210, 280 y 350 kg/cm2 (Mixer o in-situ).</li>
+                        <li><span>Acero:</span> Corrugado ASTM A615 Grado 60.</li>
+                        <li><span>Aditivos:</span> Acelerantes de fragua para zonas de altura (+3500 msnm).</li>
+                        <li><span>Cimentación:</span> Losas de cimentación, dados de anclaje y muros.</li>
+                        <li><span>Shelters:</span> Casetas de equipos, cerramientos y accesos carrozables.</li>
+                    </ul>
                 </div>
-                <div style="flex: 1;"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070" style="width: 100%;"></div>
+                <div class="tab-img-col">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070" alt="Plano Obra Civil">
+                </div>
             </div>
 
             <div id="tab2" class="tab-content">
-                <div style="flex: 1; min-width: 300px;">
-                    <h3>ALTURA & <span style="color: #009A44;">MONTAJE</span></h3>
-                    <p style="color: #ccc; margin-bottom: 20px;">Verticalidad garantizada. Certificación CBAL.</p>
-                    <div class="details-accordion">
-                        <div class="detail-item">
-                            <button class="detail-btn" onclick="toggleDetail(this)">
-                                <span>Estructuras Metálicas</span> <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="detail-text">Autosoportadas, Ventadas, Monopolos y Camufladas.</div>
-                        </div>
-                    </div>
+                <div class="tab-text-col">
+                    <h3>ESTRUCTURAS VERTICALES</h3>
+                    <p>Montaje y mantenimiento certificado bajo normativa ANSI/TIA-222-G/H. Cuadrillas con certificación CBAL.</p>
+                    
+                    <ul class="tech-specs-list">
+                        <li><span>Autosoportadas:</span> Cuadradas y triangulares hasta 100m.</li>
+                        <li><span>Ventadas:</span> Torres arriostradas para zonas de viento alto.</li>
+                        <li><span>Monopolos:</span> Estructuras tubulares y camufladas (árbol/palmera).</li>
+                        <li><span>Mantenimiento:</span> Torque controlado, verticalidad y pintura epóxica.</li>
+                        <li><span>Reforzamiento:</span> Cambio de montantes y diagonales (Retrofit).</li>
+                    </ul>
                 </div>
-                <div style="flex: 1;"><img src="https://images.unsplash.com/photo-1574689049597-7e6df3e2b024?q=80&w=2070" style="width: 100%;"></div>
+                <div class="tab-img-col">
+                    <img src="https://images.unsplash.com/photo-1565618820936-22a7df82bb7e?q=80&w=2070" alt="Torre Telecom">
+                </div>
             </div>
 
             <div id="tab3" class="tab-content">
-                <div style="flex: 1; min-width: 300px;">
-                    <h3>CONECTIVIDAD <span style="color: #009A44;">TOTAL</span></h3>
-                    <p style="color: #ccc; margin-bottom: 20px;">Redes dorsales y última milla.</p>
-                    <div class="details-accordion">
-                        <div class="detail-item">
-                            <button class="detail-btn" onclick="toggleDetail(this)">
-                                <span>Planta Externa</span> <i class="fas fa-chevron-down"></i>
-                            </button>
-                            <div class="detail-text">Tendido Aéreo ADSS y Soterrado con microzanjado.</div>
-                        </div>
-                    </div>
+                <div class="tab-text-col">
+                    <h3>CONECTIVIDAD Y TRANSPORTE</h3>
+                    <p>Soluciones integrales para planta externa (OSP) y planta interna (ISP). Redes de transporte y acceso.</p>
+                    
+                    <ul class="tech-specs-list">
+                        <li><span>Planta Externa:</span> Tendido de Fibra Óptica (Aéreo ADSS / Soterrado).</li>
+                        <li><span>Radioenlaces:</span> Instalación y alineamiento de microondas (MW).</li>
+                        <li><span>Empalmes:</span> Fusión de núcleo y certificación OTDR bidireccional.</li>
+                        <li><span>Nodos:</span> Instalación de gabinetes, rectificadores y bancos de baterías.</li>
+                        <li><span>Cableado:</span> Estructurado Cat6/6A y certificación Fluke.</li>
+                    </ul>
                 </div>
-                <div style="flex: 1;"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069" style="width: 100%;"></div>
+                <div class="tab-img-col">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bbcbf?q=80&w=2071" alt="Equipos Telecom">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section-dark" style="background: #000;">
-        <div class="section-header-center"><h2>NUESTRO PROCESO</h2></div>
+    <section class="section-dark reveal">
+        <div class="section-header-left">
+            <span class="sub-tag">INNOVACIÓN</span>
+            <h2>TECNOLOGÍA APLICADA</h2>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-item">
+                <i class="fas fa-drone" style="color: #009A44; font-size: 2rem; margin-bottom: 15px;"></i>
+                <h4>DRONES / FOTOGRAMETRÍA</h4>
+                <p style="color: #888; margin-top: 10px;">Levantamiento topográfico de alta precisión y modelado 3D del terreno (Nube de puntos).</p>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-layer-group" style="color: #009A44; font-size: 2rem; margin-bottom: 15px;"></i>
+                <h4>MODELADO BIM</h4>
+                <p style="color: #888; margin-top: 10px;">Pre-visualización de interferencias estructurales para evitar reprocesos en la ejecución.</p>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-tablet-screen-button" style="color: #009A44; font-size: 2rem; margin-bottom: 15px;"></i>
+                <h4>REPORTING CLOUD</h4>
+                <p style="color: #888; margin-top: 10px;">El cliente visualiza el avance diario, fotos georreferenciadas y tareos en tiempo real.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark reveal" style="background: #000;">
+        <div class="section-header-center">
+            <span class="sub-tag">ESTÁNDAR ISO</span>
+            <h2>FLUJO DE EJECUCIÓN</h2>
+        </div>
         <div class="process-grid">
             <div class="process-step">
-                <i class="fas fa-clipboard-list"></i>
-                <h4 style="color: white;">1. INGENIERÍA</h4>
-                <p style="color: #888;">Site Survey y Planos.</p>
+                <i class="fas fa-clipboard-check"></i>
+                <h4>1. TSSR / INGENIERÍA</h4>
+                <p>Site Survey Report y validación de ingeniería al 100% antes de movilización.</p>
             </div>
             <div class="process-step">
-                <i class="fas fa-truck-fast"></i>
-                <h4 style="color: white;">2. LOGÍSTICA</h4>
-                <p style="color: #888;">Despliegue.</p>
+                <i class="fas fa-truck-ramp-box"></i>
+                <h4>2. LOGÍSTICA</h4>
+                <p>Carga de materiales y equipos en almacén central con checklist de seguridad.</p>
             </div>
             <div class="process-step">
-                <i class="fas fa-hammer"></i>
-                <h4 style="color: white;">3. EJECUCIÓN</h4>
-                <p style="color: #888;">Construcción.</p>
+                <i class="fas fa-hard-hat"></i>
+                <h4>3. EJECUCIÓN</h4>
+                <p>Inicio de trabajos bajo supervisión permanente de Residente y Prevencionista.</p>
             </div>
             <div class="process-step">
-                <i class="fas fa-file-circle-check"></i>
-                <h4 style="color: white;">4. ENTREGA</h4>
-                <p style="color: #888;">Dossier.</p>
+                <i class="fas fa-file-signature"></i>
+                <h4>4. DOSSIER</h4>
+                <p>Entrega de protocolos, pruebas de calidad y planos As-Built finales.</p>
             </div>
         </div>
     </section>
 
-    <section style="background: #000; padding: 60px 5%; text-align: center; border-top: 1px solid #222;">
-        <h2 style="color: white; font-family: Impact, sans-serif; margin-bottom: 40px; letter-spacing: 2px;">EQUIPAMIENTO PROPIO</h2>
-        <div style="display: flex; justify-content: center; gap: 30px; margin-top: 40px; flex-wrap: wrap;">
-            <div style="text-align: center;">
-                <i class="fas fa-truck-pickup" style="font-size: 3rem; color: #333;"></i>
-                <p style="color: #666; margin-top: 10px;">FLOTA 4X4</p>
+    <section class="section-dark reveal">
+        <div class="section-header-center">
+            <h2>EQUIPAMIENTO PROPIO</h2>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; text-align: center;">
+            <div>
+                <i class="fas fa-truck-pickup" style="font-size: 4rem; color: #333;"></i>
+                <p style="color: #fff; margin-top: 15px; font-weight: bold;">FLOTA 4X4</p>
             </div>
-            <div style="text-align: center;">
-                <i class="fas fa-truck-monster" style="font-size: 3rem; color: #333;"></i>
-                <p style="color: #666; margin-top: 10px;">GRÚAS</p>
+            <div>
+                <i class="fas fa-truck-monster" style="font-size: 4rem; color: #333;"></i>
+                <p style="color: #fff; margin-top: 15px; font-weight: bold;">GRÚAS</p>
             </div>
-            <div style="text-align: center;">
-                <i class="fas fa-hammer" style="font-size: 3rem; color: #333;"></i>
-                <p style="color: #666; margin-top: 10px;">MAQUINARIA</p>
+            <div>
+                <i class="fas fa-hammer" style="font-size: 4rem; color: #333;"></i>
+                <p style="color: #fff; margin-top: 15px; font-weight: bold;">MAQUINARIA PESADA</p>
             </div>
         </div>
     </section>
 
-    <footer class="footer-dark"><div class="footer-copy">&copy; 2026 MPC.</div></footer>
+    <footer class="footer-dark"><div class="footer-copy">&copy; 2026 MPC Multiprojects.</div></footer>
 
     <script>
         function openTab(evt, tabName) {
@@ -150,7 +186,11 @@
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
-        function toggleDetail(btn) { btn.parentElement.classList.toggle("open"); }
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if(el.getBoundingClientRect().top < window.innerHeight - 150) el.classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>

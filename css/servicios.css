@@ -1,0 +1,58 @@
+/* HERO */
+.hero-internal {
+    height: 50vh; width: 100%; min-height: 400px;
+    background-size: cover; background-position: center;
+    position: relative; display: flex; align-items: center; justify-content: center; text-align: center;
+    border-bottom: 4px solid var(--mpc-green);
+}
+.bg-servicios {
+    background-image: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.95) 100%), 
+                      url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2070');
+}
+.hero-container { position: relative; z-index: 2; max-width: 1000px; padding: 0 20px; }
+.hero-container h1 { font-size: 4.5rem; margin-bottom: 10px; line-height: 1; letter-spacing: 4px; }
+.outline-text { -webkit-text-stroke: 2px white; color: transparent; background: none; -webkit-background-clip: initial; }
+
+/* TABS TÉCNICOS */
+.tabs-container { max-width: 1400px; margin: 0 auto; background: #0a0a0a; border: 1px solid #222; }
+.tab-header { display: flex; border-bottom: 1px solid #222; }
+.tab-btn {
+    flex: 1; padding: 25px; background: #050505; border: none; color: #666;
+    font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s;
+    font-family: 'Impact', sans-serif; letter-spacing: 1px; border-right: 1px solid #222;
+}
+.tab-btn:hover, .tab-btn.active { background: var(--mpc-green); color: white; }
+
+/* CONTENIDO TABS (ESTILO FICHA TÉCNICA) */
+.tab-content { display: none; padding: 60px; gap: 60px; flex-wrap: wrap; }
+.tab-content.active { display: flex; animation: fadeIn 0.6s; }
+.tab-text-col { flex: 1; min-width: 350px; }
+.tab-img-col { flex: 1; min-width: 350px; }
+.tab-img-col img { width: 100%; border: 1px solid #333; filter: contrast(1.1); }
+
+/* LISTAS TÉCNICAS (DIFERENCIADOR CLAVE) */
+.tech-specs-list { list-style: none; margin-top: 20px; border-top: 1px solid #333; padding-top: 20px; }
+.tech-specs-list li { 
+    display: flex; justify-content: space-between; 
+    padding: 12px 0; border-bottom: 1px solid #222; color: #ccc; font-size: 0.95rem; 
+}
+.tech-specs-list li span { color: var(--mpc-green); font-weight: bold; text-transform: uppercase; }
+
+/* GRID PROCESOS */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 60px; text-align: center; }
+.process-step { padding: 30px; background: #111; border: 1px solid #333; transition: 0.3s; }
+.process-step:hover { border-color: var(--mpc-green); transform: translateY(-5px); }
+.process-step i { color: var(--mpc-green); font-size: 3rem; margin-bottom: 20px; }
+.process-step h4 { color: white; font-family: 'Impact', sans-serif; letter-spacing: 1px; margin-bottom: 10px; background: none; -webkit-text-fill-color: initial; }
+
+/* TECNOLOGÍA */
+.tech-grid { display: flex; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
+.tech-item { flex: 1; background: #080808; padding: 30px; border-left: 3px solid var(--mpc-green); }
+.tech-item h4 { color: white; font-family: 'Impact', sans-serif; background: none; -webkit-text-fill-color: initial; letter-spacing: 1px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 900px) { 
+    .tab-header { flex-direction: column; } 
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-container h1 { font-size: 3rem; }
+}
