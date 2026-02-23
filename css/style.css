@@ -1,103 +1,197 @@
-/* =========================================
-   1. VARIABLES & RESET
-   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Oswald:wght@400;700&display=swap');
+
+/* ==========================================================================
+   1. VARIABLES Y RESET GENERAL
+   ========================================================================== */
 :root {
     --mpc-green: #009A44;
-    --mpc-dark: #080808;
-    --mpc-gray: #e0e0e0;
-    --font-main: 'Segoe UI', Roboto, Arial, sans-serif;
-    --font-title: 'Impact', sans-serif;
+    --mpc-dark: #0a0a0a;
+    --mpc-grey: #1a1a1a;
+    --mpc-text: #cccccc;
+    --mpc-white: #ffffff;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 
-body {
-    font-family: var(--font-main);
+body, html {
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--mpc-dark);
-    color: var(--mpc-gray);
+    color: var(--mpc-text);
     overflow-x: hidden;
-    line-height: 1.6;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    background-attachment: fixed;
+    scroll-behavior: smooth;
 }
 
-/* EFECTO METÁLICO */
-@keyframes shineMove { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
-h1, h2, h3 {
-    font-family: var(--font-title);
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #555 0%, #fff 50%, #555 100%);
-    background-size: 200% auto;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: shineMove 4s linear infinite;
-    letter-spacing: 3px;
+    line-height: 1.2;
 }
 
-/* NAVBAR */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); height: 80px; }
-.logo-box { display: flex; align-items: center; gap: 15px; }
-.logo-bg-fix { background-color: white; padding: 5px; border-radius: 4px; height: 50px; }
-.logo-text { font-family: var(--font-title); font-size: 1.8rem; color: white; letter-spacing: 2px; }
+a { text-decoration: none; color: inherit; }
+a:visited { color: inherit; }
+
+/* ==========================================================================
+   2. NAVBAR
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px; 
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo-img {
+    max-height: 45px !important;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--mpc-white);
+    letter-spacing: 2px;
+}
+
 .green-dot { color: var(--mpc-green); }
 
-.menu { display: flex; list-style: none; gap: 30px; }
-.menu a { text-decoration: none; color: #ccc; font-weight: 700; transition: 0.3s; font-size: 0.9rem; letter-spacing: 1px; }
-.menu a:hover, .menu a.active { color: var(--mpc-green); }
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 
-.cta-button { border: 2px solid var(--mpc-green); color: var(--mpc-green) !important; padding: 8px 25px; border-radius: 50px; transition: 0.3s; font-weight: bold; text-decoration: none; }
-.cta-button:hover { background: var(--mpc-green); color: white !important; box-shadow: 0 0 15px var(--mpc-green); }
-
-/* SECCIONES GENERALES */
-.section-dark { padding: 100px 5%; position: relative; }
-.section-header-center { text-align: center; margin-bottom: 60px; }
-.section-header-left { margin-bottom: 50px; border-left: 5px solid var(--mpc-green); padding-left: 20px; }
-.sub-tag { color: var(--mpc-green); font-weight: bold; letter-spacing: 4px; font-size: 0.9rem; display: block; margin-bottom: 15px; text-transform: uppercase; }
-
-/* ANIMACIONES */
-.reveal { opacity: 0; transform: translateY(50px); transition: 1s all ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
-
-/* =========================================
-   NUEVO: FOOTER & REDES SOCIALES
-   ========================================= */
-.footer-dark { background: #050505; color: white; padding: 80px 5% 30px; border-top: 1px solid #333; text-align: center; }
-.footer-inner { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #222; }
-.social-links { margin-top: 25px; display: flex; justify-content: center; gap: 20px; }
-.social-icon { 
-    width: 50px; height: 50px; border-radius: 50%; background: #111; 
-    display: flex; align-items: center; justify-content: center; 
-    color: #ccc; font-size: 1.5rem; text-decoration: none; border: 1px solid #333;
+.menu a {
+    color: var(--mpc-white);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
-.social-icon:hover { background: var(--mpc-green); color: white; border-color: var(--mpc-green); transform: translateY(-5px); }
-.footer-copy { color: #666; font-size: 0.8rem; letter-spacing: 1px; }
 
-/* =========================================
-   NUEVO: WHATSAPP FLOTANTE
-   ========================================= */
+.menu a:hover, .menu a.active { color: var(--mpc-green); }
+
+.cta-button {
+    border: 2px solid var(--mpc-green);
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: var(--mpc-green) !important;
+}
+.cta-button:hover {
+    background: var(--mpc-green);
+    color: var(--mpc-white) !important;
+}
+
+/* ==========================================================================
+   3. BOTONES Y COMPONENTES GLOBALES
+   ========================================================================== */
+.btn-outline-green {
+    border: 2px solid var(--mpc-green);
+    color: var(--mpc-green) !important;
+    padding: 15px 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    display: inline-block;
+    background: transparent;
+}
+.btn-outline-green:hover { background: var(--mpc-green); color: var(--mpc-white) !important; box-shadow: 0 0 20px rgba(0, 154, 68, 0.4); }
+
+.btn-black {
+    display: inline-block; padding: 15px 40px; background: #000; color: var(--mpc-white) !important; 
+    font-weight: bold; border: 1px solid #333; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
+}
+.btn-black:hover { background: var(--mpc-green); border-color: var(--mpc-green); }
+
+.link-arrow { color: var(--mpc-white) !important; font-weight: 700; letter-spacing: 1px; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; margin-top: 20px; }
+.link-arrow:hover { color: var(--mpc-green) !important; gap: 15px; }
+
+/* ==========================================================================
+   4. FOOTER Y REDES SOCIALES (CORREGIDO)
+   ========================================================================== */
+.footer-dark { background: #050505; padding: 80px 5% 40px; border-top: 1px solid #222; color: white; }
+
+.footer-inner { 
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
+    max-width: 1200px; 
+    margin: 0 auto 60px; 
+    align-items: start;
+}
+
+.f-logo { display: flex; flex-direction: column; align-items: flex-start; }
+.f-slogan { color: #888; margin-bottom: 25px; font-size: 0.95rem; line-height: 1.6; max-width: 400px; }
+
+/* ICONOS CON SUS COLORES OFICIALES SIEMPRE ACTIVOS */
+.social-links { display: flex; gap: 15px; }
+.social-icon { 
+    width: 45px; height: 45px; 
+    border-radius: 50%; 
+    display: flex; align-items: center; justify-content: center; 
+    color: white !important; 
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    border: none;
+}
+.social-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; }
+.social-icon.tk { background: #000000 !important; border: 1px solid #333; }
+.social-icon.fb { background: #1877F2 !important; }
+.social-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(255,255,255,0.1); }
+
+.f-contact-info h4 { 
+    color: white; font-size: 1.1rem; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; 
+    border-bottom: 2px solid var(--mpc-green); display: inline-block; padding-bottom: 10px; 
+}
+.contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.contact-item i { color: var(--mpc-green); font-size: 1.2rem; min-width: 25px; text-align: center; }
+.contact-item a, .contact-item span { color: #999; text-decoration: none; transition: 0.3s; font-size: 1rem; font-weight: 500; }
+.contact-item a:hover { color: white; }
+
+.footer-copy { text-align: center; color: #555; font-size: 0.85rem; border-top: 1px solid #1a1a1a; padding-top: 30px; width: 100%; }
+
 .float-wa {
-    position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
-    background-color: #25d366; color: #FFF; border-radius: 50px;
-    text-align: center; font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    z-index: 9999; display: flex; align-items: center; justify-content: center;
-    text-decoration: none; transition: 0.3s;
+    position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white !important;
+    width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s;
 }
-.float-wa:hover { background-color: #1ebc57; transform: scale(1.1); }
+.float-wa:hover { transform: scale(1.1); }
 
-/* Animación de pulso para el WhatsApp */
-@keyframes pulse-green {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
-.float-wa { animation: pulse-green 2s infinite; }
-
-@media (max-width: 900px) { 
-    .menu { display: none; } 
-    .footer-inner { flex-direction: column; gap: 30px; }
+/* RESPONSIVE GLOBAL */
+@media (max-width: 900px) {
+    .nav-container { flex-direction: column; gap: 15px; justify-content: center; padding-top: 15px;}
+    .navbar { height: auto; padding-bottom: 15px; }
+    .menu { flex-wrap: wrap; justify-content: center; }
+    
+    .footer-inner { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+    .f-logo { align-items: center; }
+    .f-slogan { margin-left: auto; margin-right: auto; }
+    .f-contact-info { display: flex; flex-direction: column; align-items: center; }
 }

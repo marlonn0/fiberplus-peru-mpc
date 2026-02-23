@@ -1,95 +1,470 @@
 /* =========================================
-   ESTILOS EXCLUSIVOS: OBRAS / PROYECTOS
+   ESTILOS EXCLUSIVOS: LA EMPRESA (nosotros.html)
    ========================================= */
 
-/* HERO */
+/* 1. HERO INTERNO */
 .hero-internal {
-    height: 50vh; width: 100%; min-height: 400px;
-    background-size: cover; background-position: center;
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    border-bottom: 4px solid var(--mpc-green);
+    height: 55vh;
+    min-height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 80px; 
+}
+
+/* Imagen de fondo para Nosotros (Maquinaria/Ingeniería) */
+.bg-nosotros {
+    background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=2070');
+}
+
+.hero-overlay {
+    position: absolute; top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-container h1 {
+    font-size: 4.5rem;
+    letter-spacing: 3px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.outline-text {
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+}
+
+.hero-container p {
+    font-size: 1.2rem;
+    color: var(--mpc-green);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Clases Comunes */
+.section-header-center { text-align: center; margin-bottom: 50px; margin-left: auto; margin-right: auto; }
+.section-header-center h2 { font-size: 3rem; color: white; }
+
+/* 2. MISIÓN Y VISIÓN GRID */
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mv-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    transition: 0.3s;
+    border-top: 4px solid transparent;
+}
+
+.mv-card:hover {
+    border-top-color: var(--mpc-green);
+    transform: translateY(-10px);
+    background: #151515;
+}
+
+.mv-icon {
+    font-size: 3rem;
+    color: var(--mpc-green);
+    margin-bottom: 20px;
+}
+
+.mv-card h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.mv-card p {
+    color: #999;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* 3. PILARES (TARJETAS GIRATORIAS / FLIP CARDS) */
+.flip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flip-card {
+    background-color: transparent;
+    height: 320px;
+    perspective: 1000px; /* Perspectiva 3D */
+    cursor: pointer;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.flip-front {
+    background-color: #111;
+    border: 1px solid #222;
+}
+
+.flip-front i {
+    font-size: 4rem;
+    color: var(--mpc-green);
+    margin-bottom: 20px;
+}
+
+.flip-front h3 {
+    color: white;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.flip-back {
+    background-color: var(--mpc-green);
+    color: white;
+    transform: rotateY(180deg); /* Oculta la parte trasera inicialmente */
+}
+
+.flip-back h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.flip-back p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 4. LÍNEA DE TIEMPO (TIMELINE) */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Línea vertical central */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--mpc-green);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.time-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* Círculos en la línea */
+.time-container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #000;
+    border: 4px solid var(--mpc-green);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.time-left { left: 0; }
+.time-right { left: 50%; }
+.time-left::after { right: -14px; }
+.time-right::after { left: -14px; }
+
+.time-content {
+    padding: 30px;
+    background-color: #111;
+    border: 1px solid #222;
+    position: relative;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.time-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--mpc-green);
+}
+
+.time-content h4 {
+    font-size: 1.8rem;
+    color: var(--mpc-green);
+    margin-bottom: 10px;
+}
+
+.time-content p {
+    color: #999;
+    line-height: 1.5;
+}
+
+/* 5. CUADRO DE COMPARACIÓN */
+.comparison-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 50px auto 0;
+}
+
+.comp-item {
+    background: #111;
+    border: 1px solid #222;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* Estilo para lo tradicional (Malo) */
+.comp-item.bad {
+    border-top: 5px solid #b91c1c; /* Rojo oscuro */
+}
+
+.comp-item.bad h3 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.comp-item.bad i {
+    color: #b91c1c;
+}
+
+/* Estilo para MPC (Bueno) */
+.comp-item.good {
+    border-top: 5px solid var(--mpc-green);
+    background: #0a110d; /* Un negro ligeramente verdoso */
+    border-color: #0f2416;
+}
+
+.comp-item.good h3 {
+    color: var(--mpc-green);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #1a3322;
+    padding-bottom: 10px;
+}
+
+.comp-item.good i {
+    color: var(--mpc-green);
+}
+
+.comp-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comp-list li {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    line-height: 1.5;
+}
+
+.comp-list i { margin-top: 4px; }
+.comp-list strong { color: white; margin-right: 5px; }
+
+/* 6. ORGANIGRAMA / LIDERAZGO */
+.org-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.org-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.org-card:hover {
+    background: var(--mpc-green);
+    border-color: var(--mpc-green);
+}
+
+.org-icon {
+    font-size: 3rem;
+    color: #444;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.org-card:hover .org-icon { color: white; }
+
+.org-card h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.org-card p {
+    color: #666;
+    transition: 0.3s;
+}
+
+.org-card:hover p { color: rgba(255, 255, 255, 0.8); }
+
+
+/* 7. FRASE / QUOTE */
+.quote-section {
+    background-image: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.95)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070');
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 120px 5%;
+    text-align: center;
+}
+
+.quote-box {
+    max-width: 900px;
+    margin: 0 auto;
     position: relative;
 }
-.bg-proyectos {
-    background-image: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.95) 100%), 
-                      url('https://images.unsplash.com/photo-1498084393753-b411b2d26b34?q=80&w=1932');
-}
-.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); }
-.hero-container { position: relative; z-index: 2; }
-.hero-container h1 { font-size: 5rem; letter-spacing: 5px; }
-.outline-text { -webkit-text-stroke: 2px white; color: transparent; background: none; -webkit-background-clip: initial; }
 
-/* FILTROS */
-.filter-buttons { text-align: center; margin-bottom: 50px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-.filter-btn { 
-    background: transparent; border: 1px solid #333; color: #888; 
-    padding: 12px 30px; cursor: pointer; font-weight: bold; transition: 0.3s; 
-    text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
-}
-.filter-btn:hover, .filter-btn.active { 
-    background: var(--mpc-green); color: white; border-color: var(--mpc-green); box-shadow: 0 0 15px rgba(0,154,68,0.3);
+.quote-mark {
+    font-size: 4rem;
+    color: rgba(0, 154, 68, 0.3); /* Verde muy tenue de fondo */
+    margin-bottom: 20px;
 }
 
-/* GRID DE PROYECTOS */
-.project-slider { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-    gap: 25px; 
-    min-height: 500px; /* Evita que la sección colapse */
+.quote-text {
+    font-size: 2rem;
+    color: white;
+    font-style: italic;
+    line-height: 1.4;
+    font-weight: 300;
+    margin-bottom: 30px;
 }
-.feat-project { 
-    height: 350px; position: relative; overflow: hidden; 
-    border: 1px solid #222; border-radius: 4px; cursor: pointer;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-.p-bg { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; filter: grayscale(100%); }
-.feat-project:hover .p-bg { transform: scale(1.1); filter: grayscale(0%); }
 
-.p-overlay { 
-    position: absolute; bottom: 0; left: 0; width: 100%; 
-    padding: 30px; background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); 
-    transform: translateY(20px); transition: 0.4s;
+.quote-author {
+    color: var(--mpc-green);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 }
-.feat-project:hover .p-overlay { transform: translateY(0); }
-.p-cat { 
-    color: var(--mpc-green); font-size: 0.75rem; font-weight: bold; 
-    letter-spacing: 2px; text-transform: uppercase; background: black; 
-    padding: 5px 10px; display: inline-block; margin-bottom: 10px; border: 1px solid var(--mpc-green);
-}
-.feat-project h3 { color: white; font-size: 1.5rem; margin: 0; font-family: 'Impact', sans-serif; letter-spacing: 1px; }
 
-/* Animación de Filtrado */
-.project-item.hide { display: none; opacity: 0; transform: scale(0.9); }
-.project-item.show { display: block; opacity: 1; transform: scale(1); animation: fadeIn 0.5s forwards; }
-
-/* CASO DE ÉXITO (TICLIO) */
-.case-study-section { 
-    background: #080808; padding: 100px 5%; border-top: 1px solid #222; 
-    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); /* Textura sutil opcional */
+/* 8. CERTIFICACIONES (RESPALDO TÉCNICO) */
+.cert-section {
+    background: #000;
+    border-top: 1px solid #222;
+    padding: 80px 5%;
 }
-.case-grid { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
-.tech-sheet { background: #111; padding: 40px; border: 1px solid #333; border-left: 4px solid var(--mpc-green); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-.sheet-row { 
-    display: flex; justify-content: space-between; border-bottom: 1px solid #222; 
-    padding: 15px 0; color: #ccc; font-size: 1rem; 
-}
-.sheet-row span:first-child { font-weight: bold; color: #888; text-transform: uppercase; }
-.sheet-row span:last-child { color: white; font-weight: bold; }
 
-/* NUEVO: ESTADÍSTICAS DE IMPACTO */
-.impact-bar { 
-    background: var(--mpc-green); padding: 60px 5%; 
-    display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; text-align: center; 
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
 }
-.impact-item h2 { font-size: 3.5rem; color: white; margin: 0; line-height: 1; text-shadow: 0 5px 10px rgba(0,0,0,0.2); }
-.impact-item p { color: #004d22; font-weight: 900; letter-spacing: 2px; margin-top: 10px; text-transform: uppercase; }
 
-/* NUEVO: CTA FINAL */
-.cta-project { text-align: center; padding: 80px 5%; background: #000; border-top: 1px solid #333; }
+.cert-card {
+    border: 1px solid #333;
+    padding: 40px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.cert-card:hover {
+    border-color: var(--mpc-green);
+    background: #050505;
+}
+
+.cert-card i {
+    font-size: 4rem;
+    color: var(--mpc-green);
+    margin-bottom: 20px;
+}
+
+.cert-card h4 {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.cert-card p {
+    color: #888;
+}
+
+/* ANIMACIONES */
+.slide-in { opacity: 0; transform: translateX(-50px); animation: slideIn 1s forwards 0.3s; }
+.fade-in { opacity: 0; animation: fadeIn 1s forwards 0.8s; }
+@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeIn { to { opacity: 1; transform: translateX(0); } }
+
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-    .case-grid { flex-direction: column; }
-    .hero-container h1 { font-size: 3.5rem; }
+    .hero-container h1 { font-size: 3rem; }
+    
+    .comparison-box { grid-template-columns: 1fr; gap: 30px; }
+    
+    .quote-text { font-size: 1.5rem; }
+
+    /* Ajuste para línea de tiempo en móviles */
+    .timeline::after { left: 31px; }
+    .time-container { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .time-left::after, .time-right::after { left: 21px; }
+    .time-right { left: 0; }
 }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

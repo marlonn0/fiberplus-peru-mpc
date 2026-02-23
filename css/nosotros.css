@@ -1,101 +1,462 @@
 /* =========================================
-   ESTILOS EXCLUSIVOS: NOSOTROS / EMPRESA
+   ESTILOS EXCLUSIVOS: LA EMPRESA (nosotros.html)
    ========================================= */
 
-/* HERO */
+/* 1. HERO INTERNO */
 .hero-internal {
-    height: 50vh; width: 100%; min-height: 400px;
-    background-size: cover; background-position: center;
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    border-bottom: 4px solid var(--mpc-green);
+    height: 55vh;
+    min-height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: relative;
+    padding-top: 80px; 
 }
-.bg-nosotros {
-    background-image: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.95) 100%), 
-                      url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070');
-}
-.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1; }
-.hero-container { position: relative; z-index: 2; }
-.hero-container h1 { font-size: 5rem; letter-spacing: 5px; margin: 0; }
-.outline-text { -webkit-text-stroke: 2px white; color: transparent; background: none; -webkit-background-clip: initial; }
 
-/* MISIÓN Y VISIÓN (NUEVO) */
-.mv-grid { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
-.mv-card { 
-    flex: 1; background: #111; padding: 40px; 
-    border-top: 4px solid var(--mpc-green); min-width: 300px; 
+/* Imagen de fondo (Maquinaria/Ingeniería) */
+.bg-nosotros {
+    background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=2070');
+}
+
+.hero-overlay {
+    position: absolute; top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.75);
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-container h1 {
+    font-size: 5rem;
+    letter-spacing: 5px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.outline-text {
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+}
+
+.hero-container p {
+    font-size: 1.2rem;
+    color: var(--mpc-green);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* 2. MISIÓN Y VISIÓN GRID */
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mv-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    transition: 0.4s;
+    /* La línea verde ahora está dentro del contenedor, sin desparramarse */
+    border-top: 4px solid var(--mpc-green); 
+}
+
+.mv-card:hover {
+    transform: translateY(-10px);
+    background: #151515;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.mv-icon {
+    font-size: 3rem;
+    color: var(--mpc-green);
+    margin-bottom: 20px;
+}
+
+.mv-card h3 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.mv-card p {
+    color: #a3a3a3;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* 3. PILARES (TARJETAS GIRATORIAS / FLIP CARDS) */
+.flip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flip-card {
+    background-color: transparent;
+    height: 320px;
+    perspective: 1000px; /* Perspectiva 3D */
+    cursor: pointer;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.flip-front {
+    background-color: #111;
+    border: 1px solid #222;
+}
+
+.flip-front i {
+    font-size: 4rem;
+    color: var(--mpc-green);
+    margin-bottom: 20px;
+}
+
+.flip-front h3 {
+    color: white;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.flip-back {
+    background-color: var(--mpc-green);
+    color: white;
+    transform: rotateY(180deg); 
+}
+
+.flip-back h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.flip-back p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 4. LÍNEA DE TIEMPO (TIMELINE) */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Línea vertical central */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--mpc-green);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.time-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* Círculos en la línea */
+.time-container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #000;
+    border: 4px solid var(--mpc-green);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.time-left { left: 0; }
+.time-right { left: 50%; }
+.time-left::after { right: -14px; }
+.time-right::after { left: -14px; }
+
+.time-content {
+    padding: 30px;
+    background-color: #111;
+    border: 1px solid #222;
+    position: relative;
+    border-radius: 8px;
     transition: 0.3s;
 }
-.mv-card:hover { transform: translateY(-5px); background: #151515; }
-.mv-card h3 { color: white; font-size: 1.8rem; margin-bottom: 20px; background: none; -webkit-text-fill-color: initial; }
-.mv-card p { color: #ccc; line-height: 1.6; font-size: 1.05rem; }
 
-/* FLIP CARDS (PILARES) */
-.flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 60px; }
-.flip-card { height: 350px; perspective: 1000px; cursor: pointer; }
-.flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: 0.8s; transform-style: preserve-3d; }
-.flip-card:hover .flip-inner { transform: rotateY(180deg); }
-.flip-front, .flip-back { 
-    position: absolute; width: 100%; height: 100%; backface-visibility: hidden; 
-    display: flex; flex-direction: column; align-items: center; justify-content: center; 
-    padding: 20px; border: 1px solid #333; background: #080808;
+.time-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--mpc-green);
 }
-.flip-back { background: var(--mpc-green); color: white; transform: rotateY(180deg); }
-.flip-back h3 { background: none; -webkit-text-fill-color: white; }
 
-/* TIMELINE (HISTORIA) */
-.timeline { position: relative; max-width: 800px; margin: 50px auto; }
-.timeline::after { content: ''; position: absolute; width: 4px; background-color: #333; top: 0; bottom: 0; left: 50%; margin-left: -2px; }
-.time-container { padding: 10px 40px; position: relative; width: 50%; }
-.time-left { left: 0; text-align: right; }
-.time-right { left: 50%; }
-.time-content { padding: 30px; background-color: #111; border: 1px solid #333; transition: 0.3s; }
-.time-content:hover { border-color: var(--mpc-green); transform: scale(1.02); }
-.time-content h4 { color: var(--mpc-green); font-size: 1.8rem; margin-bottom: 5px; font-family: 'Impact'; background: none; -webkit-text-fill-color: initial; letter-spacing: 1px; }
-
-/* COMPARATIVA (VS) */
-.comparison-box { display: flex; gap: 50px; margin-top: 60px; flex-wrap: wrap; justify-content: center; }
-.comp-item { 
-    flex: 1; min-width: 350px; padding: 50px 40px; 
-    background: #0a0a0a; border: 1px solid #222; border-radius: 8px; transition: 0.3s; 
+.time-content h4 {
+    font-size: 1.8rem;
+    color: var(--mpc-green);
+    margin-bottom: 10px;
 }
-/* Estilo Competencia (Rojo) */
-.comp-item.bad { border-top: 6px solid #b91c1c; opacity: 0.7; }
-.comp-item.bad h3 { color: #b91c1c; font-size: 2rem; margin-bottom: 30px; background: none; -webkit-text-fill-color: initial; }
-.comp-item.bad li i { color: #b91c1c; min-width: 25px; }
 
-/* Estilo MPC (Verde) */
-.comp-item.good { 
-    border-top: 6px solid var(--mpc-green); 
-    background: linear-gradient(145deg, #111, #051a05); 
-    transform: scale(1.05); box-shadow: 0 10px 40px rgba(0,154,68,0.15); 
-    z-index: 2;
+.time-content p {
+    color: #999;
+    line-height: 1.5;
 }
-.comp-item.good h3 { color: white; font-size: 2.5rem; margin-bottom: 30px; text-shadow: 0 0 20px var(--mpc-green); background: none; -webkit-text-fill-color: initial; }
-.comp-item.good li i { color: var(--mpc-green); min-width: 25px; }
 
-.comp-list { list-style: none; padding: 0; }
-.comp-list li { margin-bottom: 25px; font-size: 1.1rem; color: #ccc; display: flex; align-items: center; gap: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
+/* 5. CUADRO DE COMPARACIÓN */
+.comparison-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 50px auto 0;
+}
 
-/* ORGANIGRAMA HORIZONTAL */
-.org-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 60px; }
-.org-card { background: #111; border: 1px solid #222; padding: 40px 20px; text-align: center; transition: 0.3s; border-radius: 4px; }
-.org-card:hover { border-color: var(--mpc-green); transform: translateY(-10px); }
-.org-icon { font-size: 3rem; color: var(--mpc-green); margin-bottom: 20px; display: block; }
-.org-card h3 { font-size: 1.4rem; color: white; margin-bottom: 10px; background: none; -webkit-text-fill-color: initial; font-family: 'Impact'; letter-spacing: 1px; }
+.comp-item {
+    background: #111;
+    border: 1px solid #222;
+    padding: 40px;
+    border-radius: 8px;
+}
 
-/* CITA GERENCIA (NUEVO) */
-.quote-box { text-align: center; max-width: 900px; margin: 0 auto; }
-.quote-text { font-size: 1.6rem; color: #ddd; margin-bottom: 30px; font-style: italic; line-height: 1.5; }
-.quote-author { color: var(--mpc-green); font-weight: bold; font-style: normal; letter-spacing: 2px; }
+/* Estilo para lo tradicional (Malo) */
+.comp-item.bad {
+    border-top: 5px solid #b91c1c; /* Rojo oscuro */
+}
 
-/* RESPONSIVE */
+.comp-item.bad h3 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.comp-item.bad i {
+    color: #b91c1c;
+}
+
+/* Estilo para MPC (Bueno) */
+.comp-item.good {
+    border-top: 5px solid var(--mpc-green);
+    background: #0a110d; /* Negro ligeramente verdoso */
+    border-color: #0f2416;
+}
+
+.comp-item.good h3 {
+    color: var(--mpc-green);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #1a3322;
+    padding-bottom: 15px;
+}
+
+.comp-item.good i {
+    color: var(--mpc-green);
+}
+
+.comp-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comp-list li {
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    line-height: 1.5;
+}
+
+.comp-list i { margin-top: 4px; }
+.comp-list strong { color: white; margin-right: 5px; }
+
+/* 6. ORGANIGRAMA / LIDERAZGO */
+.org-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.org-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.org-card:hover {
+    background: var(--mpc-green);
+    border-color: var(--mpc-green);
+    transform: translateY(-10px);
+}
+
+.org-icon {
+    font-size: 3rem;
+    color: #444;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.org-card:hover .org-icon { color: white; }
+
+.org-card h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.org-card p {
+    color: #666;
+    transition: 0.3s;
+}
+
+.org-card:hover p { color: rgba(255, 255, 255, 0.9); }
+
+
+/* 7. FRASE / QUOTE */
+.quote-section {
+    background-image: linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.95)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070');
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 120px 5%;
+    text-align: center;
+}
+
+.quote-box {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.quote-mark {
+    font-size: 4rem;
+    color: rgba(0, 154, 68, 0.4); 
+    margin-bottom: 20px;
+}
+
+.quote-text {
+    font-size: 2.2rem;
+    color: white;
+    font-style: italic;
+    line-height: 1.4;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.quote-author {
+    color: var(--mpc-green);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* 8. CERTIFICACIONES (RESPALDO TÉCNICO) */
+.cert-section {
+    background: #000;
+    border-top: 1px solid #222;
+    padding: 100px 5%;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cert-card {
+    border: 1px solid #333;
+    padding: 40px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.cert-card:hover {
+    border-color: var(--mpc-green);
+    background: #050505;
+    transform: translateY(-5px);
+}
+
+.cert-card i {
+    font-size: 4.5rem;
+    color: var(--mpc-green);
+    margin-bottom: 20px;
+}
+
+.cert-card h4 {
+    color: white;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.cert-card p {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVE EXCLUSIVO DE ESTA PÁGINA */
 @media (max-width: 900px) {
-    .comparison-box { flex-direction: column; }
-    .comp-item.good { transform: scale(1); }
-    .org-grid { grid-template-columns: repeat(2, 1fr); }
-    .timeline::after { left: 31px; }
-    .time-container { width: 100%; padding-left: 70px; text-align: left; }
-    .time-right { left: 0; }
     .hero-container h1 { font-size: 3.5rem; }
+    
+    .comparison-box { grid-template-columns: 1fr; gap: 40px; }
+    
+    .quote-text { font-size: 1.5rem; }
+
+    /* Ajuste para línea de tiempo en móviles (Se vuelve de 1 sola columna) */
+    .timeline::after { left: 31px; }
+    .time-container { width: 100%; padding-left: 70px; padding-right: 15px; }
+    .time-left::after, .time-right::after { left: 21px; }
+    .time-right { left: 0; }
 }
