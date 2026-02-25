@@ -11,17 +11,23 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo-box"><img src="../assets/img/logo.jpg" class="logo-bg-fix"><span class="logo-text">MPC <span class="green-dot">.</span></span></div>
-        <ul class="menu">
-            <li><a href="../index.html">INICIO</a></li>
-            <li><a href="servicios.html">CAPACIDADES</a></li>
-            <li><a href="nosotros.html">LA EMPRESA</a></li>
-            <li><a href="proyectos.html">OBRAS</a></li>
-            <li><a href="contacto.html" class="active">COTIZAR</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo-box">
+                <img src="../assets/img/logo.png" alt="Logo MPC" class="nav-logo-img">
+                <span class="logo-text">MPC<span class="green-dot">.</span></span>
+            </div>
+            <ul class="menu">
+                <li><a href="../index.html">INICIO</a></li>
+                <li><a href="servicios.html">CAPACIDADES</a></li>
+                <li><a href="nosotros.html">LA EMPRESA</a></li>
+                <li><a href="proyectos.html">OBRAS</a></li>
+                <li><a href="contacto.html" class="active">COTIZAR</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="split-contact-wrapper">
+        
         <div class="contact-visual">
             <h1 class="visual-title">INICIEMOS <br>LA OBRA</h1>
             
@@ -32,8 +38,8 @@
             
             <div class="info-block">
                 <h4>CONTACTO DIRECTO</h4>
-                <p>+51 987 654 321</p>
-                <p>licitaciones@mpc-peru.com</p>
+                <p>+51 962 306 887</p>
+                <p>mpalacios@mpconstruction.pe</p>
             </div>
             
             <div class="info-block">
@@ -42,76 +48,99 @@
                 <p>Sáb: 09:00 - 13:00</p>
             </div>
 
-            <a href="#" class="whatsapp-btn">
-                <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> 
-                CHAT CON INGENIERÍA
+            <a href="https://wa.me/51962306887?text=Hola,%20necesito%20contactar%20con%20el%20área%20de%20ingeniería." class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> CHAT CON INGENIERÍA
             </a>
         </div>
 
         <div class="contact-form-area">
             <h2 class="form-title">SOLICITUD DE COTIZACIÓN</h2>
-            <form>
+            <form action="#" method="POST">
                 <input type="text" class="arch-input" placeholder="NOMBRE COMPLETO" required>
                 <input type="text" class="arch-input" placeholder="EMPRESA / RUC" required>
                 <input type="email" class="arch-input" placeholder="CORREO CORPORATIVO" required>
                 
                 <p class="project-label">TIPO DE PROYECTO:</p>
+                
                 <div class="project-type-selector">
-                    <div class="type-option">CIVIL</div>
-                    <div class="type-option">TORRES</div>
-                    <div class="type-option">FIBRA</div>
+                    <div class="type-option">OBRA CIVIL</div>
+                    <div class="type-option">METALMECÁNICA</div>
+                    <div class="type-option">TELECOMUNICACIONES</div>
                 </div>
 
-                <textarea class="arch-input" rows="1" placeholder="DETALLES / UBICACIÓN DE OBRA"></textarea>
+                <textarea class="arch-input" rows="2" placeholder="DETALLES / UBICACIÓN DE OBRA"></textarea>
                 
-                <button type="button" class="submit-btn">
-                    ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+                <button type="submit" class="submit-btn">
+                    ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane"></i>
                 </button>
             </form>
         </div>
     </div>
 
-    <section class="section-dark reveal" style="text-align: center;">
-        <span class="sub-tag">PROCESO COMERCIAL</span>
-        <h2 style="margin-bottom: 50px;">FLUJO DE ATENCIÓN</h2>
-        <div class="process-grid">
-            <div class="process-step">
-                <i class="fas fa-envelope-open-text" style="font-size: 2.5rem; color: white; margin-bottom: 15px;"></i>
-                <h4 style="color: var(--mpc-green);">1. RECEPCIÓN</h4>
-                <p style="color: #666;">Análisis en menos de 24h.</p>
-            </div>
-            <div class="process-step">
-                <i class="fas fa-hard-hat" style="font-size: 2.5rem; color: white; margin-bottom: 15px;"></i>
-                <h4 style="color: var(--mpc-green);">2. VISITA</h4>
-                <p style="color: #666;">Site Survey Técnico.</p>
-            </div>
-            <div class="process-step">
-                <i class="fas fa-file-invoice-dollar" style="font-size: 2.5rem; color: white; margin-bottom: 15px;"></i>
-                <h4 style="color: var(--mpc-green);">3. PROPUESTA</h4>
-                <p style="color: #666;">Cotización formal.</p>
-            </div>
-            <div class="process-step">
-                <i class="fas fa-handshake" style="font-size: 2.5rem; color: white; margin-bottom: 15px;"></i>
-                <h4 style="color: var(--mpc-green);">4. EJECUCIÓN</h4>
-                <p style="color: #666;">Inicio de trabajos.</p>
+    <section class="section-dark reveal text-center">
+        <div class="container-custom">
+            <span class="sub-tag">PROCESO COMERCIAL</span>
+            <h2 class="section-title">FLUJO DE ATENCIÓN</h2>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h4>1. RECEPCIÓN</h4>
+                    <p>Análisis en menos de 24h.</p>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-hard-hat"></i>
+                    <h4>2. VISITA</h4>
+                    <p>Site Survey Técnico.</p>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h4>3. PROPUESTA</h4>
+                    <p>Cotización formal.</p>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-handshake"></i>
+                    <h4>4. EJECUCIÓN</h4>
+                    <p>Inicio de trabajos.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="providers-bar reveal">
-        <div>
-            <h3 style="color: white; font-family: Impact; font-size: 2rem;">¿BUSCAS OPORTUNIDADES LABORALES?</h3>
-            <p style="color: #888; font-size: 1.1rem; margin-top: 5px;">Si eres técnico o ingeniero, envía tu CV a nuestra área de RR.HH.</p>
+        <div class="container-custom providers-flex">
+            <div class="providers-text">
+                <h3>¿BUSCAS OPORTUNIDADES LABORALES?</h3>
+                <p>Si eres técnico o ingeniero, envía tu CV a nuestra área de RR.HH.</p>
+            </div>
+            <a href="mailto:rrhh@mpconstruction.pe" class="prov-btn">
+                ENVIAR CV A RR.HH. <i class="fas fa-user-plus"></i>
+            </a>
         </div>
-        <a href="mailto:rrhh@mpc-peru.com" class="prov-btn">
-            ENVIAR CV A RR.HH. <i class="fas fa-user-plus" style="margin-left: 10px;"></i>
-        </a>
     </section>
 
-    <footer class="footer-dark"><div class="footer-copy">&copy; 2026 MPC Multiprojects.</div></footer>
-    
+    <footer class="footer-dark">
+        <div class="footer-inner">
+            <div class="f-logo">
+                <img src="../assets/img/logo.png" alt="MPC" class="nav-logo-img" style="filter: brightness(0) invert(1); margin-bottom: 15px;">
+                <p class="f-slogan">Ingeniería sin límites, ejecutada con precisión militar en los terrenos más desafiantes del Perú.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/multiprojectsconstructions?igsh=MXViaGZma2V5OWxvag==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@multiproject.cons?_r=1&_t=ZS-94270UtsR0e" target="_blank" class="social-icon tk"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="f-contact-info">
+                <h4>CONTACTO DIRECTO</h4>
+                <div class="contact-item"><i class="fas fa-phone-alt"></i> <a href="tel:+51962306887">+51 962 306 887</a></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:mpalacios@mpconstruction.pe">mpalacios@mpconstruction.pe</a></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Operatividad en todo el Perú.</span></div>
+            </div>
+        </div>
+        <div class="footer-copy">&copy; 2026 MPC Multiprojects S.A.C. | Todos los derechos reservados.</div>
+    </footer>
+
     <script>
-        // Selector de tipo de proyecto
         const options = document.querySelectorAll('.type-option');
         options.forEach(opt => {
             opt.addEventListener('click', () => {
@@ -120,11 +149,10 @@
             });
         });
 
-        // Scroll Reveal
         window.addEventListener('scroll', function(){ 
             var reveals = document.querySelectorAll('.reveal'); 
             for(var i = 0; i < reveals.length; i++){ 
-                if(reveals[i].getBoundingClientRect().top < window.innerHeight - 150){ 
+                if(reveals[i].getBoundingClientRect().top < window.innerHeight - 100){ 
                     reveals[i].classList.add('active'); 
                 } 
             } 

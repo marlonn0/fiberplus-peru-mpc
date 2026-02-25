@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Oswald:wght@400;700&display=swap');
 
-/* ==========================================================================
-   1. VARIABLES Y RESET GENERAL
-   ========================================================================== */
+/* 1. RESET Y VARIABLES */
 :root {
     --mpc-green: #009A44;
     --mpc-dark: #0a0a0a;
@@ -21,155 +19,89 @@ body, html {
     scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    line-height: 1.2;
-}
-
+h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; line-height: 1.2; }
 a { text-decoration: none; color: inherit; }
 a:visited { color: inherit; }
 
-/* ==========================================================================
-   2. NAVBAR
-   ========================================================================== */
+/* 2. NAVBAR GLOBAL Y LOGO */
 .navbar {
     position: fixed;
-    top: 0;
-    width: 100%;
-    height: 80px; 
+    top: 0; width: 100%; height: 80px;
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    align-items: center;
+    display: flex; align-items: center;
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 5%;
-    max-width: 1600px;
-    margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; padding: 0 5%; max-width: 1600px; margin: 0 auto;
 }
 
-.logo-box {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.logo-box { display: flex; align-items: center; gap: 15px; }
+
+/* TRUCO PARA EL LOGO JPG: Se ve como una tarjeta / etiqueta */
+.nav-logo-img { 
+    max-height: 45px !important; 
+    width: auto; 
+    object-fit: contain; 
+    background-color: white; 
+    padding: 5px 10px; 
+    border-radius: 6px; 
 }
 
-.nav-logo-img {
-    max-height: 45px !important;
-    width: auto;
-    object-fit: contain;
-}
-
-.logo-text {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--mpc-white);
-    letter-spacing: 2px;
-}
-
+.logo-text { font-family: 'Oswald', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--mpc-white); letter-spacing: 2px; }
 .green-dot { color: var(--mpc-green); }
 
-.menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.menu a {
-    color: var(--mpc-white);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
+.menu { display: flex; list-style: none; gap: 30px; align-items: center; margin: 0; padding: 0;}
+.menu a { color: var(--mpc-white); font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; transition: 0.3s; }
 .menu a:hover, .menu a.active { color: var(--mpc-green); }
 
-.cta-button {
-    border: 2px solid var(--mpc-green);
-    padding: 8px 20px;
-    border-radius: 5px;
-    color: var(--mpc-green) !important;
-}
-.cta-button:hover {
-    background: var(--mpc-green);
-    color: var(--mpc-white) !important;
+.cta-button { border: 2px solid var(--mpc-green); padding: 8px 20px; border-radius: 5px; color: var(--mpc-green) !important; }
+.cta-button:hover { background: var(--mpc-green); color: var(--mpc-white) !important; }
+
+/* 3. CONTENEDORES MAESTROS (MÁRGENES CORREGIDOS PARA QUE NO CHOQUEN LOS TEXTOS) */
+.container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
 }
 
-/* ==========================================================================
-   3. BOTONES Y COMPONENTES GLOBALES
-   ========================================================================== */
-.btn-outline-green {
-    border: 2px solid var(--mpc-green);
-    color: var(--mpc-green) !important;
-    padding: 15px 35px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    display: inline-block;
-    background: transparent;
-}
+.section-dark { padding: 100px 0; background-color: var(--mpc-dark); }
+.section-header-center { text-align: center; margin-bottom: 60px; }
+.section-header-left { text-align: left; margin-bottom: 50px; }
+
+/* Más espacio debajo del título verde para que respire */
+.section-header-center h2, .section-header-left h2 { font-size: 3rem; color: var(--mpc-white); margin-bottom: 25px; }
+.sub-tag { color: var(--mpc-green); font-weight: 700; font-size: 0.85rem; letter-spacing: 3px; border-left: 3px solid var(--mpc-green); padding-left: 10px; margin-bottom: 20px; display: inline-block; text-transform: uppercase;}
+.highlight-green { color: var(--mpc-green); }
+
+/* 4. BOTONES GLOBALES */
+.btn-outline-green { border: 2px solid var(--mpc-green); color: var(--mpc-green) !important; padding: 15px 35px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; display: inline-block; background: transparent; border-radius: 4px; }
 .btn-outline-green:hover { background: var(--mpc-green); color: var(--mpc-white) !important; box-shadow: 0 0 20px rgba(0, 154, 68, 0.4); }
 
-.btn-black {
-    display: inline-block; padding: 15px 40px; background: #000; color: var(--mpc-white) !important; 
-    font-weight: bold; border: 1px solid #333; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
-}
+.btn-black { display: inline-block; padding: 15px 40px; background: #000; color: var(--mpc-white) !important; font-weight: bold; border: 1px solid #333; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; }
 .btn-black:hover { background: var(--mpc-green); border-color: var(--mpc-green); }
 
 .link-arrow { color: var(--mpc-white) !important; font-weight: 700; letter-spacing: 1px; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; margin-top: 20px; }
 .link-arrow:hover { color: var(--mpc-green) !important; gap: 15px; }
 
-/* ==========================================================================
-   4. FOOTER Y REDES SOCIALES (CORREGIDO)
-   ========================================================================== */
+/* 5. FOOTER GLOBAL */
 .footer-dark { background: #050505; padding: 80px 5% 40px; border-top: 1px solid #222; color: white; }
-
-.footer-inner { 
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 60px; 
-    max-width: 1200px; 
-    margin: 0 auto 60px; 
-    align-items: start;
-}
-
+.footer-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto 60px; align-items: start; }
 .f-logo { display: flex; flex-direction: column; align-items: flex-start; }
 .f-slogan { color: #888; margin-bottom: 25px; font-size: 0.95rem; line-height: 1.6; max-width: 400px; }
 
-/* ICONOS CON SUS COLORES OFICIALES SIEMPRE ACTIVOS */
 .social-links { display: flex; gap: 15px; }
-.social-icon { 
-    width: 45px; height: 45px; 
-    border-radius: 50%; 
-    display: flex; align-items: center; justify-content: center; 
-    color: white !important; 
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-    border: none;
-}
+.social-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white !important; transition: all 0.3s ease; font-size: 1.2rem; border: none; }
 .social-icon.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important; }
 .social-icon.tk { background: #000000 !important; border: 1px solid #333; }
 .social-icon.fb { background: #1877F2 !important; }
 .social-icon:hover { transform: translateY(-5px); filter: brightness(1.15); box-shadow: 0 5px 15px rgba(255,255,255,0.1); }
 
-.f-contact-info h4 { 
-    color: white; font-size: 1.1rem; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; 
-    border-bottom: 2px solid var(--mpc-green); display: inline-block; padding-bottom: 10px; 
-}
+.f-contact-info h4 { color: white; font-size: 1.1rem; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; border-bottom: 2px solid var(--mpc-green); display: inline-block; padding-bottom: 10px; }
 .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
 .contact-item i { color: var(--mpc-green); font-size: 1.2rem; min-width: 25px; text-align: center; }
 .contact-item a, .contact-item span { color: #999; text-decoration: none; transition: 0.3s; font-size: 1rem; font-weight: 500; }
@@ -177,19 +109,24 @@ a:visited { color: inherit; }
 
 .footer-copy { text-align: center; color: #555; font-size: 0.85rem; border-top: 1px solid #1a1a1a; padding-top: 30px; width: 100%; }
 
-.float-wa {
-    position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white !important;
-    width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s;
-}
+/* WHATSAPP FLOTANTE */
+.float-wa { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white !important; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: transform 0.3s; }
 .float-wa:hover { transform: scale(1.1); }
 
-/* RESPONSIVE GLOBAL */
+/* 6. ANIMACIONES Y RESPONSIVE */
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+.slide-in { opacity: 0; transform: translateX(-50px); animation: slideIn 1s forwards 0.3s; }
+.fade-in { opacity: 0; animation: fadeIn 1s forwards 0.8s; }
+.fade-in-delay { opacity: 0; animation: fadeIn 1s forwards 1.2s; }
+
 @media (max-width: 900px) {
     .nav-container { flex-direction: column; gap: 15px; justify-content: center; padding-top: 15px;}
     .navbar { height: auto; padding-bottom: 15px; }
     .menu { flex-wrap: wrap; justify-content: center; }
-    
     .footer-inner { grid-template-columns: 1fr; gap: 50px; text-align: center; }
     .f-logo { align-items: center; }
     .f-slogan { margin-left: auto; margin-right: auto; }
