@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-box">
-                <img src="../assets/img/logo.png" alt="Logo MPC" class="nav-logo-img">
+                <img src="../assets/img/logo.jpg" alt="Logo MPC" class="nav-logo-img">
                 <span class="logo-text">MPC<span class="green-dot">.</span></span>
             </div>
             <ul class="menu">
@@ -30,7 +30,8 @@
         <div class="hero-overlay"></div>
         <div class="hero-container">
             <h1 class="slide-in">NUESTRA <span class="outline-text">HUELLA</span></h1>
-            <p class="fade-in">INFRAESTRUCTURA QUE CONECTA AL PERÚ</p>
+            <p class="fade-in" style="margin-bottom: 30px;">INFRAESTRUCTURA QUE CONECTA AL PERÚ</p>
+            <a href="#galeria-proyectos" class="btn-outline-green fade-in-delay">VER GALERÍA DE OBRAS <i class="fas fa-camera-retro" style="margin-left: 10px;"></i></a>
         </div>
     </header>
 
@@ -38,79 +39,100 @@
         <div class="container-custom impact-grid">
             <div class="impact-item">
                 <h2>+2,500</h2>
-                <p>KM DE REDES TELECOM</p>
+                <p>KM DE REDES CONSTRUIDAS</p>
             </div>
             <div class="impact-item">
                 <h2>+450</h2>
-                <p>SITIOS CONSTRUIDOS</p>
+                <p>ESTRUCTURAS LEVANTADAS</p>
             </div>
             <div class="impact-item">
                 <h2>100%</h2>
-                <p>SATISFACCIÓN CLIENTE</p>
+                <p>SATISFACCIÓN TÉCNICA</p>
             </div>
         </div>
     </section>
 
-    <section class="section-dark reveal">
+    <section id="galeria-proyectos" class="section-dark reveal">
         <div class="container-custom">
             
             <div class="section-header-center">
                 <span class="sub-tag">PORTAFOLIO</span>
-                <h2>FILTRAR POR CATEGORÍA</h2>
+                <h2>GALERÍA DE EJECUCIÓN</h2>
             </div>
             
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterProjects('all')">VER TODO</button>
                 <button class="filter-btn" onclick="filterProjects('civil')">OBRA CIVIL</button>
-                <button class="filter-btn" onclick="filterProjects('metalmecanica')">METALMECÁNICA</button>
-                <button class="filter-btn" onclick="filterProjects('telecom')">TELECOMUNICACIONES</button>
+                <button class="filter-btn" onclick="filterProjects('estructuras')">ESTRUCTURAS</button>
+                <button class="filter-btn" onclick="filterProjects('redes')">REDES Y COMUNICACIÓN</button>
             </div>
 
             <div class="project-grid-layout" id="projectGrid">
                 
-                <div class="feat-project project-item telecom show">
-                    <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=2074" class="p-bg" alt="Telecomunicaciones Arequipa">
-                    <div class="p-overlay"><span class="p-cat">TELECOM</span><h3>Dorsal Sur</h3></div>
-                </div>
-                
-                <div class="feat-project project-item civil show">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef526b0042a0?q=80&w=2070" class="p-bg" alt="Civil Cusco">
-                    <div class="p-overlay"><span class="p-cat">OBRA CIVIL</span><h3>Data Center</h3></div>
-                </div>
-                
-                <div class="feat-project project-item telecom show">
-                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bbcbf?q=80&w=2071" class="p-bg" alt="Telecomunicaciones Piura">
-                    <div class="p-overlay"><span class="p-cat">TELECOM</span><h3>Red de Acceso Rural</h3></div>
-                </div>
-                
-                <div class="feat-project project-item metalmecanica show">
-                    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=2070" class="p-bg" alt="Metalmecanica Loreto">
-                    <div class="p-overlay"><span class="p-cat">METALMECÁNICA</span><h3>Estructura Selva</h3></div>
-                </div>
-                
-                <div class="feat-project project-item civil show">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070" class="p-bg" alt="Civil Lima">
-                    <div class="p-overlay"><span class="p-cat">OBRA CIVIL</span><h3>Cimentación Nodo</h3></div>
-                </div>
-                
-                <div class="feat-project project-item metalmecanica show">
-                    <img src="https://images.unsplash.com/photo-1565618820936-22a7df82bb7e?q=80&w=2070" class="p-bg" alt="Metalmecanica Trujillo">
-                    <div class="p-overlay"><span class="p-cat">METALMECÁNICA</span><h3>Monopolo 30m</h3></div>
-                </div>
-                
-                <div class="feat-project project-item telecom show">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069" class="p-bg" alt="Telecomunicaciones Junín">
-                    <div class="p-overlay"><span class="p-cat">TELECOM</span><h3>Enlace Troncal OPGW</h3></div>
-                </div>
-                
-                <div class="feat-project project-item telecom show">
-                    <img src="../assets/img/fibra-tacna-1.jpg" class="p-bg" alt="Telecomunicaciones Tacna">
+                <div class="feat-project project-item redes show" onclick="openLightbox(this)">
+                    <img src="https://images.pexels.com/photos/1646250/pexels-photo-1646250.jpeg?auto=compress&cs=tinysrgb&w=800" class="p-bg" alt="Tendido de Fibra Aérea">
                     <div class="p-overlay">
-                        <span class="p-cat">TELECOM</span>
-                        <h3>Tendido de Planta Externa</h3>
+                        <span class="p-cat">REDES Y COMUNICACIÓN</span>
+                        <h3>Despliegue FTTx Norte</h3>
                     </div>
                 </div>
                 
+                <div class="feat-project project-item civil show" onclick="openLightbox(this)">
+                    <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800" class="p-bg" alt="Construcción Data Center">
+                    <div class="p-overlay">
+                        <span class="p-cat">OBRA CIVIL</span>
+                        <h3>Data Center Principal</h3>
+                    </div>
+                </div>
+                
+                <div class="feat-project project-item estructuras show" onclick="openLightbox(this)">
+                    <img src="https://images.pexels.com/photos/2836263/pexels-photo-2836263.jpeg?auto=compress&cs=tinysrgb&w=800" class="p-bg" alt="Montaje de Torre">
+                    <div class="p-overlay">
+                        <span class="p-cat">ESTRUCTURAS</span>
+                        <h3>Torre Autosoportada 45m</h3>
+                    </div>
+                </div>
+                
+                <div class="feat-project project-item civil show" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800" class="p-bg" alt="Cimentación y Encofrado">
+                    <div class="p-overlay">
+                        <span class="p-cat">OBRA CIVIL</span>
+                        <h3>Cimentación Nodo Selva</h3>
+                    </div>
+                </div>
+                
+                <div class="feat-project project-item estructuras show" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1611605645802-c2177454848c?q=80&w=800" class="p-bg" alt="Reforzamiento Metálico">
+                    <div class="p-overlay">
+                        <span class="p-cat">ESTRUCTURAS</span>
+                        <h3>Reforzamiento Monopolo</h3>
+                    </div>
+                </div>
+                
+                <div class="feat-project project-item redes show" onclick="openLightbox(this)">
+                    <img src="https://images.pexels.com/photos/3315369/pexels-photo-3315369.jpeg?auto=compress&cs=tinysrgb&w=800" class="p-bg" alt="Empalme de Fibra Óptica">
+                    <div class="p-overlay">
+                        <span class="p-cat">REDES Y COMUNICACIÓN</span>
+                        <h3>Enlace Troncal OPGW</h3>
+                    </div>
+                </div>
+                
+                <div class="feat-project project-item civil show" onclick="openLightbox(this)">
+                    <img src="https://images.pexels.com/photos/1238941/pexels-photo-1238941.jpeg?auto=compress&cs=tinysrgb&w=800" class="p-bg" alt="Maquinaria Movimiento Tierras">
+                    <div class="p-overlay">
+                        <span class="p-cat">OBRA CIVIL</span>
+                        <h3>Movimiento de Tierras</h3>
+                    </div>
+                </div>
+
+                <div class="feat-project project-item redes show" onclick="openLightbox(this)">
+                    <img src="../assets/img/fibra-tacna-1.jpg" class="p-bg" alt="Planta Externa Tacna" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508344928928-7165b67de128?q=80&w=800';">
+                    <div class="p-overlay">
+                        <span class="p-cat">REDES Y COMUNICACIÓN</span>
+                        <h3>Planta Externa Tacna</h3>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -154,7 +176,7 @@
     <footer class="footer-dark">
         <div class="footer-inner">
             <div class="f-logo">
-                <img src="../assets/img/logo.png" alt="MPC" class="nav-logo-img" style="filter: brightness(0) invert(1); margin-bottom: 15px;">
+                <img src="../assets/img/logo.jpg" alt="MPC" class="nav-logo-img" style="margin-bottom: 15px;">
                 <p class="f-slogan">Ingeniería sin límites, ejecutada con precisión militar en los terrenos más desafiantes del Perú.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/multiprojectsconstructions?igsh=MXViaGZma2V5OWxvag==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
@@ -176,8 +198,14 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <div id="lightboxModal" class="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
     <script>
-        // FILTRO DE PROYECTOS ACTUALIZADO
+        // 1. FILTRO DE PROYECTOS
         function filterProjects(category) {
             var items = document.getElementsByClassName("project-item");
             var btns = document.getElementsByClassName("filter-btn");
@@ -206,6 +234,31 @@
             }
         }
         
+        // 2. FUNCIÓN LIGHTBOX (Agrandar Imagen al hacer clic)
+        function openLightbox(element) {
+            var modal = document.getElementById("lightboxModal");
+            var imgModal = document.getElementById("lightboxImage");
+            var caption = document.getElementById("lightboxCaption");
+            
+            // Busca la imagen y el título dentro de la tarjeta que se hizo clic
+            var imgSource = element.querySelector("img").src;
+            var projectTitle = element.querySelector("h3").innerText;
+            var projectCat = element.querySelector(".p-cat").innerText;
+
+            modal.style.display = "flex";
+            setTimeout(() => { modal.style.opacity = "1"; }, 10);
+            
+            imgModal.src = imgSource;
+            caption.innerHTML = "<span style='color: #009A44; font-size: 0.9rem; letter-spacing: 2px;'>" + projectCat + "</span><br>" + projectTitle;
+        }
+
+        function closeLightbox() {
+            var modal = document.getElementById("lightboxModal");
+            modal.style.opacity = "0";
+            setTimeout(() => { modal.style.display = "none"; }, 300);
+        }
+
+        // 3. ANIMACIÓN DE SCROLL REVEAL
         window.addEventListener('scroll', function(){ 
             var reveals = document.querySelectorAll('.reveal'); 
             for(var i = 0; i < reveals.length; i++){ 

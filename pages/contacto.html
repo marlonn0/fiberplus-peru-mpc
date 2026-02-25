@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-box">
-                <img src="../assets/img/logo.png" alt="Logo MPC" class="nav-logo-img">
+                <img src="../assets/img/logo.jpg" alt="Logo MPC" class="nav-logo-img">
                 <span class="logo-text">MPC<span class="green-dot">.</span></span>
             </div>
             <ul class="menu">
@@ -29,7 +29,7 @@
     <div class="split-contact-wrapper">
         
         <div class="contact-visual">
-            <h1 class="visual-title">INICIEMOS <br>LA OBRA</h1>
+            <h1 class="visual-title">INICIEMOS <br><span style="color: var(--mpc-green);">LA OBRA</span></h1>
             
             <div class="info-block">
                 <h4>OFICINA CENTRAL</h4>
@@ -48,19 +48,20 @@
                 <p>Sáb: 09:00 - 13:00</p>
             </div>
 
-            <a href="https://wa.me/51962306887?text=Hola,%20necesito%20contactar%20con%20el%20área%20de%20ingeniería." class="whatsapp-btn" target="_blank">
+            <a href="https://wa.me/51962306887?text=Hola,%20necesito%20contactar%20con%20el%20área%20de%20ingeniería%20para%20una%20cotización." class="whatsapp-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> CHAT CON INGENIERÍA
             </a>
         </div>
 
         <div class="contact-form-area">
             <h2 class="form-title">SOLICITUD DE COTIZACIÓN</h2>
-            <form action="#" method="POST">
+            
+            <form id="quoteForm" action="#" method="POST" onsubmit="submitForm(event)">
                 <input type="text" class="arch-input" placeholder="NOMBRE COMPLETO" required>
                 <input type="text" class="arch-input" placeholder="EMPRESA / RUC" required>
                 <input type="email" class="arch-input" placeholder="CORREO CORPORATIVO" required>
                 
-                <p class="project-label">TIPO DE PROYECTO:</p>
+                <p class="project-label">TIPO DE PROYECTO (Seleccione uno):</p>
                 
                 <div class="project-type-selector">
                     <div class="type-option">OBRA CIVIL</div>
@@ -68,9 +69,9 @@
                     <div class="type-option">TELECOMUNICACIONES</div>
                 </div>
 
-                <textarea class="arch-input" rows="2" placeholder="DETALLES / UBICACIÓN DE OBRA"></textarea>
+                <textarea class="arch-input" rows="3" placeholder="DETALLES Y UBICACIÓN DE LA OBRA..." required></textarea>
                 
-                <button type="submit" class="submit-btn">
+                <button type="submit" class="submit-btn" id="btnSubmit">
                     ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane"></i>
                 </button>
             </form>
@@ -86,22 +87,22 @@
                 <div class="process-step">
                     <i class="fas fa-envelope-open-text"></i>
                     <h4>1. RECEPCIÓN</h4>
-                    <p>Análisis en menos de 24h.</p>
+                    <p>Análisis de requerimiento en menos de 24 horas.</p>
                 </div>
                 <div class="process-step">
                     <i class="fas fa-hard-hat"></i>
                     <h4>2. VISITA</h4>
-                    <p>Site Survey Técnico.</p>
+                    <p>Site Survey Técnico en la ubicación del proyecto.</p>
                 </div>
                 <div class="process-step">
                     <i class="fas fa-file-invoice-dollar"></i>
                     <h4>3. PROPUESTA</h4>
-                    <p>Cotización formal.</p>
+                    <p>Entrega de cotización formal y cronograma.</p>
                 </div>
                 <div class="process-step">
                     <i class="fas fa-handshake"></i>
                     <h4>4. EJECUCIÓN</h4>
-                    <p>Inicio de trabajos.</p>
+                    <p>Firma de contrato e inicio inmediato de obra.</p>
                 </div>
             </div>
         </div>
@@ -111,7 +112,7 @@
         <div class="container-custom providers-flex">
             <div class="providers-text">
                 <h3>¿BUSCAS OPORTUNIDADES LABORALES?</h3>
-                <p>Si eres técnico o ingeniero, envía tu CV a nuestra área de RR.HH.</p>
+                <p>Si eres técnico homologado, operador de maquinaria o ingeniero colegiado, envía tu CV a nuestra área de RR.HH.</p>
             </div>
             <a href="mailto:rrhh@mpconstruction.pe" class="prov-btn">
                 ENVIAR CV A RR.HH. <i class="fas fa-user-plus"></i>
@@ -122,7 +123,7 @@
     <footer class="footer-dark">
         <div class="footer-inner">
             <div class="f-logo">
-                <img src="../assets/img/logo.png" alt="MPC" class="nav-logo-img" style="filter: brightness(0) invert(1); margin-bottom: 15px;">
+                <img src="../assets/img/logo.jpg" alt="MPC" class="nav-logo-img" style="margin-bottom: 15px;">
                 <p class="f-slogan">Ingeniería sin límites, ejecutada con precisión militar en los terrenos más desafiantes del Perú.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/multiprojectsconstructions?igsh=MXViaGZma2V5OWxvag==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
@@ -140,15 +141,22 @@
         <div class="footer-copy">&copy; 2026 MPC Multiprojects S.A.C. | Todos los derechos reservados.</div>
     </footer>
 
+    <a href="https://wa.me/51962306887?text=Hola%20MPC%20Per%C3%BA,%20deseo%20realizar%20una%20consulta." class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
+        // 1. Script para el selector de opciones del formulario
         const options = document.querySelectorAll('.type-option');
         options.forEach(opt => {
             opt.addEventListener('click', () => {
+                // Quita la selección de todos y se la pone al que clickeaste
                 options.forEach(o => o.classList.remove('selected'));
                 opt.classList.add('selected');
             });
         });
 
+        // 2. Animación Scroll Reveal
         window.addEventListener('scroll', function(){ 
             var reveals = document.querySelectorAll('.reveal'); 
             for(var i = 0; i < reveals.length; i++){ 
@@ -158,6 +166,39 @@
             } 
         });
         window.dispatchEvent(new Event('scroll'));
+
+        // 3. Simulación de Envío de Formulario (Interactividad)
+        function submitForm(event) {
+            event.preventDefault(); // Evita que la página recargue
+            
+            var btn = document.getElementById("btnSubmit");
+            
+            // Estado de carga
+            btn.innerHTML = 'ENVIANDO... <i class="fas fa-spinner fa-spin"></i>';
+            btn.style.opacity = "0.7";
+            btn.style.pointerEvents = "none";
+            
+            // Simula que tarda 2 segundos en enviar y muestra éxito
+            setTimeout(() => {
+                btn.innerHTML = '¡REQUERIMIENTO RECIBIDO! <i class="fas fa-check-circle"></i>';
+                btn.style.backgroundColor = "#009A44";
+                btn.style.color = "white";
+                btn.style.opacity = "1";
+                
+                // Resetea el formulario
+                document.getElementById("quoteForm").reset();
+                options.forEach(o => o.classList.remove('selected'));
+
+                // Vuelve al estado normal después de 4 segundos
+                setTimeout(() => {
+                    btn.innerHTML = 'ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane"></i>';
+                    btn.style.backgroundColor = "transparent";
+                    btn.style.color = "var(--mpc-green)";
+                    btn.style.pointerEvents = "auto";
+                }, 4000);
+
+            }, 2000);
+        }
     </script>
 </body>
 </html>
