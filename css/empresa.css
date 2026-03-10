@@ -1,0 +1,205 @@
+/* =========================================
+   ESTILOS EXCLUSIVOS: LA EMPRESA
+   Archivo: css/empresa.css
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
+
+/* 1. HERO INTERNO */
+.hero-internal {
+    height: 60vh; min-height: 450px; width: 100%;
+    background-size: cover; background-position: center; background-attachment: fixed;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    position: relative; padding-top: 100px; 
+}
+
+/* Usamos una imagen corporativa, por ejemplo la excavadora antigua o una de ingenieros */
+.bg-empresa { 
+    background-color: #111;
+    background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=1920'); 
+}
+
+.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 1; }
+.hero-container { position: relative; z-index: 2; padding: 0 20px; }
+.hero-container h1 { font-family: 'Titillium Web', sans-serif; font-size: 5rem; letter-spacing: 5px; color: white; margin-bottom: 10px; font-weight: 900;}
+.outline-text { -webkit-text-stroke: 2px white; color: transparent; background: none;}
+.hero-container p { font-family: 'Titillium Web', sans-serif; font-size: 1.2rem; color: var(--mpc-green); font-weight: 700; letter-spacing: 2px; }
+
+/* 2. CONTADORES ANIMADOS */
+.counter-section { background-color: var(--mpc-green); padding: 60px 0; border-top: 2px solid #00c255; border-bottom: 2px solid #00c255; }
+.counter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+.counter-item { color: white; }
+.counter-number { font-family: 'Titillium Web', sans-serif; font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 10px; text-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+.counter-item p { font-family: 'Titillium Web', sans-serif; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; color: #004d22; }
+
+/* 3. MISIÓN Y VISIÓN */
+.mv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+.mv-card { background: #111; border: 1px solid #222; padding: 50px 40px; border-radius: 12px; transition: 0.4s; border-top: 4px solid var(--mpc-green); }
+.mv-card:hover { transform: translateY(-10px); background: #151515; box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+.mv-icon { font-size: 3.5rem; color: var(--mpc-green); margin-bottom: 20px; }
+.mv-card h3 { font-family: 'Titillium Web', sans-serif; font-size: 2rem; color: white; margin-bottom: 20px; letter-spacing: 1px; font-weight: 900;}
+.mv-card p { font-family: 'Titillium Web', sans-serif; color: #bbb; line-height: 1.8; font-size: 1.1rem; }
+
+/* 4. PILARES GIRATORIOS */
+.flip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.flip-card { background-color: transparent; height: 320px; perspective: 1000px; cursor: pointer; }
+.flip-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s ease; transform-style: preserve-3d; }
+.flip-card:hover .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; }
+.flip-front { background-color: #111; border: 1px solid #222; }
+.flip-front i { font-size: 4rem; color: var(--mpc-green); margin-bottom: 20px; }
+.flip-front h3 { font-family: 'Titillium Web', sans-serif; color: white; font-size: 1.8rem; letter-spacing: 1px; font-weight: 900;}
+.flip-back { background-color: var(--mpc-green); color: white; transform: rotateY(180deg); border: 2px solid white;}
+.flip-back h3 { font-family: 'Titillium Web', sans-serif; font-size: 1.8rem; margin-bottom: 15px; color: white; font-weight: 900;}
+.flip-back p { font-family: 'Titillium Web', sans-serif; font-size: 1.1rem; line-height: 1.6; color: white; font-weight: 600;}
+
+/* 5. VIDEO PROMO REDISEÑADO */
+.video-promo-section {
+    height: 600px; 
+    padding: 100px 5%;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    position: relative; background: #080808; 
+}
+.video-overlay { 
+    position: absolute; top:0; left:0; width:100%; height:100%; 
+    background: radial-gradient(circle, rgba(10,10,10,0.7) 0%, rgba(0,0,0,0.95) 100%), 
+                url('../assets/img/image_419e58.jpg'); 
+    background-size: cover; background-position: center; filter: brightness(0.6); z-index: 1;
+}
+.video-content-framed { 
+    position: relative; z-index: 2; padding: 60px 40px;
+    border: 1px solid #222; border-radius: 15px;
+    background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 154, 68, 0.2);
+    transition: all 0.5s ease; width: 100%; max-width: 800px;
+}
+.video-promo-section:hover .video-content-framed {
+    border-color: var(--mpc-green); box-shadow: 0 15px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 154, 68, 0.4); transform: translateY(-5px);
+}
+.video-content-framed h2 { font-family: 'Titillium Web', sans-serif; font-size: 3.5rem; color: white; margin: 15px 0 30px; font-weight: 900;}
+.video-content-framed p { font-family: 'Titillium Web', sans-serif; color: #ccc; font-size: 1.3rem; margin-top: 30px; letter-spacing: 1px;}
+
+.play-btn-refined {
+    width: 100px; height: 100px; background-color: white; color: var(--mpc-dark);
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; padding-left: 5px; text-decoration: none;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); animation: pulse-play-white 2s infinite; transition: all 0.3s ease;
+}
+.play-btn-refined:hover { transform: scale(1.1); background-color: var(--mpc-green); color: white; box-shadow: 0 0 0 0 rgba(0, 154, 68, 0.7); animation: pulse-play-green 2s infinite;}
+
+@keyframes pulse-play-white {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+@keyframes pulse-play-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 154, 68, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(0, 154, 68, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 154, 68, 0); }
+}
+
+/* 6. LÍNEA DE TIEMPO (TIMELINE) */
+.timeline { position: relative; max-width: 1000px; margin: 0 auto; }
+.timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--mpc-green); top: 0; bottom: 0; left: 50%; margin-left: -2px; }
+.time-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+.time-container::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: #000; border: 4px solid var(--mpc-green); top: 25px; border-radius: 50%; z-index: 1; }
+.time-left { left: 0; }
+.time-right { left: 50%; }
+.time-left::after { right: -12px; }
+.time-right::after { left: -12px; }
+.time-content { padding: 30px; background-color: #111; border: 1px solid #222; position: relative; border-radius: 12px; transition: 0.3s; }
+.time-content:hover { transform: translateY(-5px); border-color: var(--mpc-green); box-shadow: 0 10px 20px rgba(0,154,68,0.1); }
+.time-content h4 { font-family: 'Titillium Web', sans-serif; font-size: 2.2rem; color: var(--mpc-green); margin-bottom: 10px; font-weight: 900;}
+.time-content p { font-family: 'Titillium Web', sans-serif; color: #bbb; line-height: 1.6; font-size: 1.1rem;}
+
+/* 7. CUADRO DE COMPARACIÓN */
+.comparison-box { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.comp-item { background: #111; border: 1px solid #222; padding: 40px 30px; border-radius: 12px; }
+.comp-item.bad { border-top: 5px solid #b91c1c; }
+.comp-item.bad h3 { font-family: 'Titillium Web', sans-serif; color: white; margin-bottom: 25px; font-size: 1.8rem; border-bottom: 1px solid #333; padding-bottom: 15px; font-weight: 900;}
+.comp-item.bad i { color: #b91c1c; }
+.comp-item.good { border-top: 5px solid var(--mpc-green); background: #0a110d; border-color: #0f2416; }
+.comp-item.good h3 { font-family: 'Titillium Web', sans-serif; color: var(--mpc-green); margin-bottom: 25px; font-size: 1.8rem; border-bottom: 1px solid #1a3322; padding-bottom: 15px; font-weight: 900;}
+.comp-item.good i { color: var(--mpc-green); font-size: 1.2rem;}
+.comp-list { list-style: none; padding: 0; }
+.comp-list li { font-family: 'Titillium Web', sans-serif; color: #ccc; margin-bottom: 20px; font-size: 1.15rem; display: flex; align-items: flex-start; gap: 15px; line-height: 1.5; }
+.comp-list i { margin-top: 4px; }
+.comp-list strong { color: white; margin-right: 5px; }
+
+/* 🌟 8. FRASE / QUOTE (CAJA ELEGANTE Y MÁS PEQUEÑA) 🌟 */
+.quote-section {
+    background-color: #050505; /* Fondo oscuro liso para que resalte la caja */
+    padding: 100px 5%;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+}
+.quote-box-elegant {
+    max-width: 750px; /* Mucho más contenida y pequeña */
+    margin: 0 auto;
+    background: #0d0d0d;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 50px 60px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.quote-box-elegant:hover {
+    transform: translateY(-5px);
+    border-color: #333;
+}
+.quote-mark {
+    font-size: 3.5rem;
+    color: #1a1a1a; /* Marca de agua muy sutil */
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.quote-text {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.6rem; /* Tamaño más equilibrado */
+    color: #ddd;
+    font-style: italic;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+}
+.quote-author {
+    font-family: 'Titillium Web', sans-serif;
+    color: var(--mpc-green);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* 9. CERTIFICACIONES */
+.cert-section { background: #000; border-top: 1px solid #222; padding: 100px 0; }
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
+.cert-card { border: 1px solid #333; padding: 40px 20px; border-radius: 12px; transition: 0.3s; background: #080808; }
+.cert-card:hover { border-color: var(--mpc-green); background: #0a0a0a; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,154,68,0.1);}
+.cert-card i { font-size: 4.5rem; color: var(--mpc-green); margin-bottom: 20px; transition: 0.3s;}
+.cert-card:hover i { transform: scale(1.1); }
+.cert-card h4 { font-family: 'Titillium Web', sans-serif; color: white; font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 10px; font-weight: 900;}
+.cert-card p { font-family: 'Titillium Web', sans-serif; color: #888; font-size: 1.1rem; }
+
+/* 10. MODAL DE VIDEO */
+.video-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); backdrop-filter: blur(8px); }
+.video-modal.active { display: flex; align-items: center; justify-content: center; animation: fadeIn 0.5s; }
+.modal-content { position: relative; width: 90%; max-width: 900px; aspect-ratio: 16 / 9; background: #000; border: 2px solid var(--mpc-green); box-shadow: 0 0 30px rgba(0,154,68,0.3); border-radius: 8px; overflow: hidden; }
+.close-modal { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 50px; font-weight: 300; transition: 0.3s; cursor: pointer; z-index: 2001; }
+.close-modal:hover { color: var(--mpc-green); transform: scale(1.1); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero-container h1 { font-size: 3.5rem; }
+    .video-content-framed h2 { font-size: 2.5rem; }
+    .comparison-box { grid-template-columns: 1fr; gap: 40px; }
+    .quote-box-elegant { padding: 40px 25px; }
+    .quote-text { font-size: 1.3rem; }
+    .timeline::after { left: 31px; }
+    .time-container { width: 100%; padding-left: 70px; padding-right: 15px; }
+    .time-left::after, .time-right::after { left: 21px; }
+    .time-right { left: 0; }
+}

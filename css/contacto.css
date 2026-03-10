@@ -3,19 +3,21 @@
    Archivo: css/contacto.css
    ========================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
+
 /* 1. ESTRUCTURA DIVIDIDA DE PANTALLA COMPLETA */
 .split-contact-wrapper { 
     display: flex; 
     min-height: 100vh; 
-    padding-top: 100px; /* Compensación por la navbar de 100px */
+    padding-top: 90px; /* Compensación por la navbar */
     background: #000; 
 }
 
 /* 2. MITAD IZQUIERDA: INFORMACIÓN VISUAL */
 .contact-visual { 
     flex: 1; 
-    /* IMAGEN DE FONDO VERIFICADA Y ESTABLE DE INGENIERÍA */
-    background: linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.95)), 
+    /* Imagen de fondo representativa de ingeniería/construcción */
+    background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.95)), 
                 url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070'); 
     background-size: cover; 
     background-position: center; 
@@ -23,53 +25,56 @@
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
-    border-right: 1px solid #222;
+    border-right: 1px solid #1a1a1a;
 }
 
 .visual-title { 
-    font-family: 'Oswald', sans-serif; 
+    font-family: 'Titillium Web', sans-serif; 
     font-size: 5rem; 
     color: white; 
     line-height: 1.1; 
     margin-bottom: 50px; 
     letter-spacing: 2px;
+    font-weight: 900;
 }
 
 .info-block { margin-bottom: 40px; border-left: 4px solid var(--mpc-green); padding-left: 20px; }
-.info-block h4 { color: var(--mpc-green); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: bold; }
-.info-block p { color: #ccc; font-size: 1.15rem; line-height: 1.6; }
+.info-block h4 { font-family: 'Titillium Web', sans-serif; color: var(--mpc-green); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; font-weight: 900; }
+.info-block p { font-family: 'Titillium Web', sans-serif; color: #ccc; font-size: 1.2rem; line-height: 1.6; }
 
 .whatsapp-btn {
+    font-family: 'Titillium Web', sans-serif;
     background: #25D366; color: white !important; padding: 15px 35px; text-decoration: none; 
-    font-weight: bold; display: inline-flex; align-items: center; gap: 15px; 
+    font-weight: 700; display: inline-flex; align-items: center; gap: 15px; 
     border-radius: 50px; width: fit-content; margin-top: 20px; transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2); font-size: 1.1rem;
 }
 .whatsapp-btn i { font-size: 1.5rem; }
 .whatsapp-btn:hover { background: #1ebc57; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transform: translateY(-3px); }
 
 /* 3. MITAD DERECHA: FORMULARIO */
 .contact-form-area { 
-    flex: 1.2; /* Ligeramente más ancha para que respiren los inputs */
-    background: #0a0a0a; 
+    flex: 1.2; 
+    background: #080808; 
     padding: 80px 10%; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
 }
-.form-title { color: white; font-family: 'Oswald', sans-serif; margin-bottom: 40px; font-size: 2.8rem; letter-spacing: 1px; }
+.form-title { color: white; font-family: 'Titillium Web', sans-serif; margin-bottom: 50px; font-size: 3rem; letter-spacing: 1px; font-weight: 900;}
 
+/* Estilo de input elegante (línea inferior) */
 .arch-input { 
     width: 100%; background: transparent; border: none; border-bottom: 2px solid #333; 
     padding: 15px 0; color: white; outline: none; transition: 0.4s; margin-bottom: 40px; 
-    font-size: 1.1rem; font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem; font-family: 'Titillium Web', sans-serif; resize: none;
 }
 .arch-input:focus { border-bottom-color: var(--mpc-green); }
-.arch-input::placeholder { color: #555; font-weight: bold; font-size: 0.95rem; letter-spacing: 1px; }
+.arch-input::placeholder { color: #666; font-weight: 600; font-size: 1rem; letter-spacing: 1px; }
 
-.project-label { color: #888; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+.project-label { font-family: 'Titillium Web', sans-serif; color: #888; font-size: 0.95rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
 
-/* Selector de proyectos rediseñado para que quepan palabras largas */
+/* Selector de proyectos */
 .project-type-selector { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
@@ -78,56 +83,61 @@
 }
 
 .type-option { 
+    font-family: 'Titillium Web', sans-serif;
     text-align: center; 
     padding: 20px 10px; 
     border: 1px solid #333; 
     cursor: pointer; 
     color: #666; 
     transition: 0.3s; 
-    font-weight: bold; 
+    font-weight: 700; 
     text-transform: uppercase; 
     letter-spacing: 1px;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.02);
 }
 
-.type-option:hover { border-color: #888; color: white; }
-.type-option.selected { border-color: var(--mpc-green); color: white; background: rgba(0, 154, 68, 0.1); box-shadow: 0 0 15px rgba(0,154,68,0.15); }
+.type-option:hover { border-color: #888; color: white; background: rgba(255,255,255,0.05);}
+.type-option.selected { border-color: var(--mpc-green); color: white; background: rgba(0, 154, 68, 0.1); box-shadow: 0 0 15px rgba(0,154,68,0.2); }
 
 .submit-btn {
+    font-family: 'Titillium Web', sans-serif;
     width: 100%; background: transparent; border: 2px solid var(--mpc-green); color: var(--mpc-green); 
-    cursor: pointer; padding: 25px; font-weight: 900; font-size: 1.1rem; letter-spacing: 2px; 
-    transition: 0.3s; text-transform: uppercase; border-radius: 4px; display: flex; justify-content: center; align-items: center; gap: 10px;
+    cursor: pointer; padding: 25px; font-weight: 900; font-size: 1.2rem; letter-spacing: 2px; 
+    transition: 0.3s; text-transform: uppercase; border-radius: 6px; display: flex; justify-content: center; align-items: center; gap: 15px;
 }
-.submit-btn:hover { background: var(--mpc-green); color: white; box-shadow: 0 0 20px rgba(0,154,68,0.3); }
+.submit-btn:hover { background: var(--mpc-green); color: white; box-shadow: 0 10px 30px rgba(0,154,68,0.3); transform: translateY(-3px);}
 
 /* 4. FLUJO DE ATENCIÓN */
 .text-center { text-align: center; }
-.section-title { margin-bottom: 50px; }
+.section-title { font-family: 'Titillium Web', sans-serif; color: white; font-size: 3rem; margin-bottom: 50px; font-weight: 900;}
 
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center; }
-.process-step { padding: 40px 20px; border: 1px solid #222; background: #080808; border-radius: 8px; transition: 0.3s; }
-.process-step:hover { border-color: var(--mpc-green); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,154,68,0.1);}
-.process-step i { font-size: 3rem; color: white; margin-bottom: 20px; transition: 0.3s; }
-.process-step:hover i { color: var(--mpc-green); }
-.process-step h4 { color: var(--mpc-green); margin-bottom: 15px; font-size: 1.3rem; letter-spacing: 1px; font-family: 'Oswald', sans-serif;}
-.process-step p { color: #888; line-height: 1.5; font-size: 1.05rem;}
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center; max-width: 1200px; margin: 0 auto;}
+.process-step { padding: 40px 20px; border: 1px solid #222; background: #0a0a0a; border-radius: 12px; transition: 0.3s; }
+.process-step:hover { border-color: var(--mpc-green); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,154,68,0.1);}
+.process-step i { font-size: 3.5rem; color: #333; margin-bottom: 20px; transition: 0.4s; }
+.process-step:hover i { color: var(--mpc-green); transform: scale(1.1);}
+.process-step h4 { font-family: 'Titillium Web', sans-serif; color: var(--mpc-green); margin-bottom: 15px; font-size: 1.4rem; letter-spacing: 1px; font-weight: 900;}
+.process-step p { font-family: 'Titillium Web', sans-serif; color: #888; line-height: 1.6; font-size: 1.05rem;}
 
 /* 5. SECCIÓN RECURSOS HUMANOS */
-.providers-bar { background: #050505; padding: 80px 0; border-top: 1px solid #222; }
+.providers-bar { background: #050505; padding: 80px 0; border-top: 1px solid #222; border-bottom: 1px solid #222;}
 .providers-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
-.providers-text h3 { color: white; font-family: 'Oswald', sans-serif; font-size: 2.5rem; letter-spacing: 1px; margin-bottom: 10px;}
-.providers-text p { color: #888; font-size: 1.15rem; }
-.prov-btn { color: white !important; text-decoration: none; border: 1px solid #333; padding: 20px 40px; transition: 0.3s; font-weight: bold; letter-spacing: 1px; border-radius: 4px; display: inline-flex; align-items: center; gap: 10px;}
-.prov-btn:hover { border-color: var(--mpc-green); color: var(--mpc-green) !important; background: rgba(0, 154, 68, 0.05); }
+.providers-text h3 { font-family: 'Titillium Web', sans-serif; color: white; font-size: 2.5rem; letter-spacing: 1px; margin-bottom: 15px; font-weight: 900;}
+.providers-text p { font-family: 'Titillium Web', sans-serif; color: #888; font-size: 1.15rem; max-width: 700px; line-height: 1.6;}
+.prov-btn { font-family: 'Titillium Web', sans-serif; color: white !important; text-decoration: none; border: 2px solid #333; padding: 20px 40px; transition: 0.3s; font-weight: 900; letter-spacing: 1px; border-radius: 6px; display: inline-flex; align-items: center; gap: 15px;}
+.prov-btn:hover { border-color: var(--mpc-green); color: var(--mpc-green) !important; background: rgba(0, 154, 68, 0.05); transform: translateY(-3px);}
 
 /* RESPONSIVE */
 @media (max-width: 900px) { 
     .split-contact-wrapper { flex-direction: column; } 
-    .contact-visual { padding: 60px 5%; text-align: center; align-items: center; }
-    .contact-visual .info-block { border-left: none; border-bottom: 2px solid var(--mpc-green); padding-left: 0; padding-bottom: 20px;}
+    .contact-visual { padding: 60px 5%; text-align: center; align-items: center; border-right: none; border-bottom: 1px solid #222;}
+    .contact-visual .info-block { border-left: none; border-bottom: 2px solid var(--mpc-green); padding-left: 0; padding-bottom: 20px; width: 100%;}
     .contact-form-area { padding: 60px 5%; } 
     .visual-title { font-size: 3.5rem; }
     .form-title { font-size: 2.2rem; text-align: center;}
     .providers-flex { flex-direction: column; text-align: center; }
+    .section-title { font-size: 2.5rem; }
+    .providers-text h3 { font-size: 2rem; }
 }

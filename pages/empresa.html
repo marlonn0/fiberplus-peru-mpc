@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Empresa | MPC Perú</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/nosotros.css">
+    <link rel="stylesheet" href="../css/empresa.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -14,23 +14,23 @@
         <div class="nav-container">
             <div class="logo-box">
                 <img src="../assets/img/logo.jpg" alt="Logo MPC" class="nav-logo-img">
-                <span class="logo-text">MPC<span class="green-dot">.</span></span>
+                <span class="logo-text">MPC</span>
             </div>
             <ul class="menu">
                 <li><a href="../index.html">INICIO</a></li>
-                <li><a href="servicios.html">CAPACIDADES</a></li>
-                <li><a href="nosotros.html" class="active">LA EMPRESA</a></li>
-                <li><a href="proyectos.html">OBRAS</a></li>
+                <li><a href="capacidades.html">CAPACIDADES</a></li>
+                <li><a href="empresa.html" class="active">LA EMPRESA</a></li>
+                <li><a href="obras.html">OBRAS</a></li>
                 <li><a href="contacto.html" class="cta-button">COTIZAR</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero-internal bg-nosotros">
+    <header class="hero-internal bg-empresa">
         <div class="hero-overlay"></div>
         <div class="hero-container">
             <h1 class="slide-in">NUESTRO <span class="outline-text">ADN</span></h1>
-            <p class="fade-in" style="margin-bottom: 30px;">INGENIERÍA EXTREMA, COMPROMISO TOTAL</p>
+            <p class="fade-in" style="margin-bottom: 40px;">INGENIERÍA EXTREMA, COMPROMISO TOTAL</p>
             <a href="#historia" class="btn-outline-green fade-in-delay">NUESTRA TRAYECTORIA <i class="fas fa-arrow-down" style="margin-left: 10px;"></i></a>
         </div>
     </header>
@@ -128,11 +128,11 @@
 
     <section class="video-promo-section reveal">
         <div class="video-overlay"></div>
-        <div class="video-content">
+        <div class="video-content-framed">
             <span class="sub-tag" style="border-color: white; color: white;">OPERATIVA EN ACCIÓN</span>
             <h2>CONSTRUYENDO EL PERÚ PROFUNDO</h2>
             
-            <a href="#" class="play-btn" onclick="openVideoModal(event)">
+            <a href="#" class="play-btn-refined" onclick="openVideoModal(event)">
                 <i class="fas fa-play"></i>
             </a>
             
@@ -209,7 +209,7 @@
     </section>
 
     <section class="quote-section reveal">
-        <div class="quote-box">
+        <div class="quote-box-elegant">
             <i class="fas fa-quote-left quote-mark"></i>
             <p class="quote-text">"La ingeniería no se trata solo de construir cosas; se trata de construir confianza en los lugares más difíciles del Perú. Donde otros ven obstáculos, nosotros vemos el camino trazado."</p>
             <p class="quote-author">- GERENCIA DE PROYECTOS MPC</p>
@@ -251,7 +251,7 @@
     <footer class="footer-dark">
         <div class="footer-inner">
             <div class="f-logo">
-                <img src="../assets/img/logo.jpg" alt="MPC" class="nav-logo-img" style="margin-bottom: 15px;">
+                <img src="../assets/img/logo.jpg" alt="MPC" class="nav-logo-img" style="margin-bottom: 15px; background: white; padding: 10px; border-radius: 8px;">
                 <p class="f-slogan">Ingeniería sin límites, ejecutada con precisión militar en los terrenos más desafiantes del Perú.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/multiprojectsconstructions?igsh=MXViaGZma2V5OWxvag==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
@@ -284,6 +284,7 @@
     </div>
 
     <script>
+        // Animaciones Reveal
         window.addEventListener('scroll', function(){ 
             var reveals = document.querySelectorAll('.reveal'); 
             for(var i = 0; i < reveals.length; i++){ 
@@ -294,6 +295,7 @@
         });
         window.dispatchEvent(new Event('scroll'));
 
+        // Contadores Animados
         const counters = document.querySelectorAll('.count-up');
         let hasAnimated = false;
 
@@ -324,13 +326,10 @@
             }
         });
 
-        // ==========================================
-        // SCRIPT DEL VIDEO NATIVO 
-        // ==========================================
+        // Script Video Modal
         function openVideoModal(e) {
             e.preventDefault(); 
             document.getElementById('videoModal').classList.add('active');
-            // Reproduce el video guardado en tu carpeta
             document.getElementById('companyVideo').play();
         }
 
@@ -342,4 +341,4 @@
         }
     </script>
 </body>
-</html> 
+</html>

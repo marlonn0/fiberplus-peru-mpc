@@ -14,13 +14,13 @@
         <div class="nav-container">
             <div class="logo-box">
                 <img src="../assets/img/logo.jpg" alt="Logo MPC" class="nav-logo-img">
-                <span class="logo-text">MPC<span class="green-dot">.</span></span>
+                <span class="logo-text">MPC</span>
             </div>
             <ul class="menu">
                 <li><a href="../index.html">INICIO</a></li>
-                <li><a href="servicios.html">CAPACIDADES</a></li>
-                <li><a href="nosotros.html">LA EMPRESA</a></li>
-                <li><a href="proyectos.html">OBRAS</a></li>
+                <li><a href="capacidades.html">CAPACIDADES</a></li>
+                <li><a href="empresa.html">LA EMPRESA</a></li>
+                <li><a href="obras.html">OBRAS</a></li>
                 <li><a href="contacto.html" class="active">COTIZAR</a></li>
             </ul>
         </div>
@@ -29,7 +29,7 @@
     <div class="split-contact-wrapper">
         
         <div class="contact-visual">
-            <h1 class="visual-title">INICIEMOS <br><span style="color: var(--mpc-green);">LA OBRA</span></h1>
+            <h1 class="visual-title">INICIEMOS <br><span class="highlight-green">LA OBRA</span></h1>
             
             <div class="info-block">
                 <h4>OFICINA CENTRAL</h4>
@@ -69,7 +69,7 @@
                     <div class="type-option">TELECOMUNICACIONES</div>
                 </div>
 
-                <textarea class="arch-input" rows="3" placeholder="DETALLES Y UBICACIÓN DE LA OBRA..." required></textarea>
+                <textarea class="arch-input" rows="4" placeholder="DETALLES Y UBICACIÓN DE LA OBRA..." required></textarea>
                 
                 <button type="submit" class="submit-btn" id="btnSubmit">
                     ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane"></i>
@@ -123,7 +123,7 @@
     <footer class="footer-dark">
         <div class="footer-inner">
             <div class="f-logo">
-                <img src="../assets/img/logo.jpg" alt="MPC" class="nav-logo-img" style="margin-bottom: 15px;">
+                <img src="../assets/img/logo.jpg" alt="MPC" class="nav-logo-img" style="margin-bottom: 15px; background: white; padding: 10px; border-radius: 8px;">
                 <p class="f-slogan">Ingeniería sin límites, ejecutada con precisión militar en los terrenos más desafiantes del Perú.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/multiprojectsconstructions?igsh=MXViaGZma2V5OWxvag==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
@@ -150,7 +150,6 @@
         const options = document.querySelectorAll('.type-option');
         options.forEach(opt => {
             opt.addEventListener('click', () => {
-                // Quita la selección de todos y se la pone al que clickeaste
                 options.forEach(o => o.classList.remove('selected'));
                 opt.classList.add('selected');
             });
@@ -167,29 +166,25 @@
         });
         window.dispatchEvent(new Event('scroll'));
 
-        // 3. Simulación de Envío de Formulario (Interactividad)
+        // 3. Simulación de Envío de Formulario
         function submitForm(event) {
-            event.preventDefault(); // Evita que la página recargue
+            event.preventDefault(); 
             
             var btn = document.getElementById("btnSubmit");
             
-            // Estado de carga
             btn.innerHTML = 'ENVIANDO... <i class="fas fa-spinner fa-spin"></i>';
             btn.style.opacity = "0.7";
             btn.style.pointerEvents = "none";
             
-            // Simula que tarda 2 segundos en enviar y muestra éxito
             setTimeout(() => {
                 btn.innerHTML = '¡REQUERIMIENTO RECIBIDO! <i class="fas fa-check-circle"></i>';
-                btn.style.backgroundColor = "#009A44";
+                btn.style.backgroundColor = "var(--mpc-green)";
                 btn.style.color = "white";
                 btn.style.opacity = "1";
                 
-                // Resetea el formulario
                 document.getElementById("quoteForm").reset();
                 options.forEach(o => o.classList.remove('selected'));
 
-                // Vuelve al estado normal después de 4 segundos
                 setTimeout(() => {
                     btn.innerHTML = 'ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane"></i>';
                     btn.style.backgroundColor = "transparent";

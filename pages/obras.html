@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obras y Proyectos | MPC Perú</title>
+    <title>Obras | MPC Perú</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/proyectos.css">
+    <link rel="stylesheet" href="../css/obras.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -14,24 +14,24 @@
         <div class="nav-container">
             <div class="logo-box">
                 <img src="../assets/img/logo.jpg" alt="Logo MPC" class="nav-logo-img">
-                <span class="logo-text">MPC<span class="green-dot">.</span></span>
+                <span class="logo-text">MPC</span>
             </div>
             <ul class="menu">
                 <li><a href="../index.html">INICIO</a></li>
-                <li><a href="servicios.html">CAPACIDADES</a></li>
-                <li><a href="nosotros.html">LA EMPRESA</a></li>
-                <li><a href="proyectos.html" class="active">OBRAS</a></li>
+                <li><a href="capacidades.html">CAPACIDADES</a></li>
+                <li><a href="empresa.html">LA EMPRESA</a></li>
+                <li><a href="obras.html" class="active">OBRAS</a></li>
                 <li><a href="contacto.html" class="cta-button">COTIZAR</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero-internal bg-proyectos">
+    <header class="hero-internal bg-obras">
         <div class="hero-overlay"></div>
         <div class="hero-container">
             <h1 class="slide-in">NUESTRA <span class="outline-text">HUELLA</span></h1>
             <p class="fade-in" style="margin-bottom: 30px;">INFRAESTRUCTURA QUE CONECTA AL PERÚ</p>
-            <a href="#galeria-proyectos" class="btn-outline-green fade-in-delay">VER GALERÍA DE OBRAS <i class="fas fa-camera-retro" style="margin-left: 10px;"></i></a>
+            <a href="#galeria-obras" class="btn-outline-green fade-in-delay">VER GALERÍA DE OBRAS <i class="fas fa-camera-retro" style="margin-left: 10px;"></i></a>
         </div>
     </header>
 
@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <section id="galeria-proyectos" class="section-dark reveal">
+    <section id="galeria-obras" class="section-dark reveal">
         <div class="container-custom">
             
             <div class="section-header-center">
@@ -167,16 +167,16 @@
 
     <section class="cta-project reveal">
         <div class="container-custom">
-            <h2>¿TIENE UN PROYECTO COMPLEJO?</h2>
+            <h2>¿TIENE UNA OBRA COMPLEJA?</h2>
             <p>Si podemos construir en Ticlio, podemos construir donde sea.</p>
-            <a href="contacto.html" class="btn-outline-green">COTIZAR PROYECTO</a>
+            <a href="contacto.html" class="btn-outline-green" style="margin-top: 20px;">COTIZAR OBRA</a>
         </div>
     </section>
 
     <footer class="footer-dark">
         <div class="footer-inner">
             <div class="f-logo">
-                <img src="../assets/img/logo.jpg" alt="MPC" class="nav-logo-img" style="margin-bottom: 15px;">
+                <img src="../assets/img/logo.jpg" alt="MPC" class="nav-logo-img" style="margin-bottom: 15px; background: white; padding: 10px; border-radius: 8px;">
                 <p class="f-slogan">Ingeniería sin límites, ejecutada con precisión militar en los terrenos más desafiantes del Perú.</p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/multiprojectsconstructions?igsh=MXViaGZma2V5OWxvag==" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
@@ -205,7 +205,6 @@
     </div>
 
     <script>
-        // 1. FILTRO DE PROYECTOS
         function filterProjects(category) {
             var items = document.getElementsByClassName("project-item");
             var btns = document.getElementsByClassName("filter-btn");
@@ -234,13 +233,11 @@
             }
         }
         
-        // 2. FUNCIÓN LIGHTBOX (Agrandar Imagen al hacer clic)
         function openLightbox(element) {
             var modal = document.getElementById("lightboxModal");
             var imgModal = document.getElementById("lightboxImage");
             var caption = document.getElementById("lightboxCaption");
             
-            // Busca la imagen y el título dentro de la tarjeta que se hizo clic
             var imgSource = element.querySelector("img").src;
             var projectTitle = element.querySelector("h3").innerText;
             var projectCat = element.querySelector(".p-cat").innerText;
@@ -249,7 +246,7 @@
             setTimeout(() => { modal.style.opacity = "1"; }, 10);
             
             imgModal.src = imgSource;
-            caption.innerHTML = "<span style='color: #009A44; font-size: 0.9rem; letter-spacing: 2px;'>" + projectCat + "</span><br>" + projectTitle;
+            caption.innerHTML = "<span style='color: #009A44; font-size: 1rem; letter-spacing: 2px; font-weight: 800; font-family: \"Titillium Web\", sans-serif;'>" + projectCat + "</span><br>" + projectTitle;
         }
 
         function closeLightbox() {
@@ -258,7 +255,6 @@
             setTimeout(() => { modal.style.display = "none"; }, 300);
         }
 
-        // 3. ANIMACIÓN DE SCROLL REVEAL
         window.addEventListener('scroll', function(){ 
             var reveals = document.querySelectorAll('.reveal'); 
             for(var i = 0; i < reveals.length; i++){ 
