@@ -48,7 +48,7 @@
                 <p>Sáb: 09:00 - 13:00</p>
             </div>
 
-            <a href="https://wa.me/51962306887?text=Hola,%20necesito%20contactar%20con%20el%20área%20de%20ingeniería%20para%20una%20cotización." class="whatsapp-btn" target="_blank">
+            <a href="https://wa.me/51962306887?text=Hola%20equipo%20de%20ingenier%C3%ADa%20de%20MPC%20Per%C3%BA%2C%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto." class="whatsapp-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> CHAT CON INGENIERÍA
             </a>
         </div>
@@ -57,9 +57,9 @@
             <h2 class="form-title">SOLICITUD DE COTIZACIÓN</h2>
             
             <form id="quoteForm" action="#" method="POST" onsubmit="submitForm(event)">
-                <input type="text" class="arch-input" placeholder="NOMBRE COMPLETO" required>
-                <input type="text" class="arch-input" placeholder="EMPRESA / RUC" required>
-                <input type="email" class="arch-input" placeholder="CORREO CORPORATIVO" required>
+                <input type="text" id="form-name" class="arch-input" placeholder="NOMBRE COMPLETO" required>
+                <input type="text" id="form-ruc" class="arch-input" placeholder="EMPRESA / RUC" required>
+                <input type="email" id="form-email" class="arch-input" placeholder="CORREO CORPORATIVO" required>
                 
                 <p class="project-label">TIPO DE PROYECTO (Seleccione uno):</p>
                 
@@ -69,7 +69,7 @@
                     <div class="type-option">TELECOMUNICACIONES</div>
                 </div>
 
-                <textarea class="arch-input" rows="4" placeholder="DETALLES Y UBICACIÓN DE LA OBRA..." required></textarea>
+                <textarea id="form-details" class="arch-input" rows="4" placeholder="DETALLES Y UBICACIÓN DE LA OBRA..." required></textarea>
                 
                 <button type="submit" class="submit-btn" id="btnSubmit">
                     ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane"></i>
@@ -141,7 +141,7 @@
         <div class="footer-copy">&copy; 2026 MPC Multiprojects S.A.C. | Todos los derechos reservados.</div>
     </footer>
 
-    <a href="https://wa.me/51962306887?text=Hola%20MPC%20Per%C3%BA,%20deseo%20realizar%20una%20consulta." class="float-wa" target="_blank">
+    <a href="https://wa.me/51962306887?text=Hola%20MPC%20Per%C3%BA%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios." class="float-wa" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -166,33 +166,49 @@
         });
         window.dispatchEvent(new Event('scroll'));
 
-        // 3. Simulación de Envío de Formulario
+        // 3. ENVÍO DE FORMULARIO A WHATSAPP (CON FORMATO CORREGIDO)
         function submitForm(event) {
             event.preventDefault(); 
             
+            // Capturar los valores de los inputs
+            let name = document.getElementById("form-name").value;
+            let ruc = document.getElementById("form-ruc").value;
+            let email = document.getElementById("form-email").value;
+            let details = document.getElementById("form-details").value;
+            
+            // Identificar qué tipo de proyecto seleccionó
+            let selectedOption = document.querySelector('.type-option.selected');
+            let projectType = selectedOption ? selectedOption.innerText : 'No especificado';
+            
+            // Construir el mensaje usando texto plano normal y \n para los saltos
+            let msg = "*NUEVA SOLICITUD DE COTIZACIÓN - MPC PERÚ*\n\n";
+            msg += " Cliente: " + name + "\n";
+            msg += " Empresa/RUC: " + ruc + "\n";
+            msg += " Correo: " + email + "\n";
+            msg += " Especialidad: " + projectType + "\n";
+            msg += " Detalles de Obra: " + details;
+
+            // encodeURIComponent asegura que el salto de línea (\n) y las negrillas (*) se respeten
+            let encodedMessage = encodeURIComponent(msg);
+            let waLink = `https://wa.me/51962306887?text=${encodedMessage}`;
+
+            // Cambiar el diseño del botón temporalmente
             var btn = document.getElementById("btnSubmit");
+            btn.innerHTML = '¡REDIRECCIONANDO A WHATSAPP! <i class="fab fa-whatsapp"></i>';
+            btn.style.backgroundColor = "var(--mpc-green)";
+            btn.style.color = "white";
             
-            btn.innerHTML = 'ENVIANDO... <i class="fas fa-spinner fa-spin"></i>';
-            btn.style.opacity = "0.7";
-            btn.style.pointerEvents = "none";
-            
+            // Abrir WhatsApp
+            window.open(waLink, '_blank');
+
+            // Resetear el formulario
             setTimeout(() => {
-                btn.innerHTML = '¡REQUERIMIENTO RECIBIDO! <i class="fas fa-check-circle"></i>';
-                btn.style.backgroundColor = "var(--mpc-green)";
-                btn.style.color = "white";
-                btn.style.opacity = "1";
-                
                 document.getElementById("quoteForm").reset();
                 options.forEach(o => o.classList.remove('selected'));
-
-                setTimeout(() => {
-                    btn.innerHTML = 'ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane"></i>';
-                    btn.style.backgroundColor = "transparent";
-                    btn.style.color = "var(--mpc-green)";
-                    btn.style.pointerEvents = "auto";
-                }, 4000);
-
-            }, 2000);
+                btn.innerHTML = 'ENVIAR REQUERIMIENTO <i class="fas fa-paper-plane"></i>';
+                btn.style.backgroundColor = "transparent";
+                btn.style.color = "var(--mpc-green)";
+            }, 3000);
         }
     </script>
 </body>
