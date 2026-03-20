@@ -1,169 +1,231 @@
 /* =========================================
-   ESTILOS EXCLUSIVOS: OBRAS
+   ESTILOS EXCLUSIVOS: PORTAFOLIO DE OBRAS
    Archivo: css/obras.css
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
-
-/* 1. HERO INTERNO (PORTADA) */
-.hero-internal {
-    height: 60vh; 
-    width: 100%; 
-    min-height: 450px;
-    background-size: cover; 
-    background-position: center;
-    background-attachment: fixed;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center;
+/* 🌟 HERO BANNER INTERNO 🌟 */
+.page-hero {
     position: relative;
-    padding-top: 100px;
+    padding: 220px 0 100px 0; 
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    border-bottom: 6px solid var(--mpc-green);
+}
+.page-hero-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+}
+.page-hero-bg img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+}
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(17, 17, 17, 0.75); 
+}
+.relative-z { position: relative; z-index: 2; }
+.pill-tag {
+    background: var(--mpc-green); color: white; border: none; font-size: 0.9rem;
+    padding: 8px 18px; border-radius: 30px; font-weight: 900; display: inline-block; margin-bottom: 20px;
+}
+.page-hero h1 {
+    font-size: 3.8rem; font-weight: 900; margin-bottom: 20px; letter-spacing: 1px; color: #ffffff; 
+}
+.page-hero h1 .highlight-green { color: var(--mpc-green); }
+
+/* Animaciones */
+@keyframes smoothSlideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.page-hero h1 .word-1 { display: inline-block; opacity: 0; animation: smoothSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s; }
+.page-hero h1 .word-2 { display: inline-block; opacity: 0; animation: smoothSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.5s; }
+.page-hero p {
+    font-size: 1.15rem; max-width: 680px; margin: 0 auto; color: #e5e8eb; line-height: 1.6;
+    opacity: 0; animation: smoothSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.8s;
 }
 
-.bg-obras {
-    background-image: radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.95) 100%), 
-                      url('https://images.unsplash.com/photo-1498084393753-b411b2d26b34?q=80&w=1932');
+/* 🌟 SECCIONES GLOBALES 🌟 */
+.section-light { background-color: #f8fafc; padding: 90px 0; } 
+
+/* 🌟 GALERÍA GRID CON TARJETAS (TITULOS VISIBLES) 🌟 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 35px;
 }
 
-.hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: 1; }
-.hero-container { position: relative; z-index: 2; padding: 0 20px;}
-.hero-container h1 { font-family: 'Titillium Web', sans-serif; font-size: 5rem; letter-spacing: 5px; color: white; margin-bottom: 10px; font-weight: 900;}
-.hero-container p { font-family: 'Titillium Web', sans-serif; font-size: 1.2rem; color: var(--mpc-green); font-weight: 700; letter-spacing: 2px; }
-.outline-text { -webkit-text-stroke: 2px white; color: transparent; background: none; }
-
-/* 2. BARRA DE IMPACTO */
-.impact-bar { background: var(--mpc-green); padding: 60px 0; border-top: 2px solid #00c255; border-bottom: 2px solid #00c255;}
-.impact-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; text-align: center; }
-.impact-item h2 { font-family: 'Titillium Web', sans-serif; font-size: 5rem; font-weight: 900; color: white; margin: 0; line-height: 1; text-shadow: 0 5px 10px rgba(0,0,0,0.2); }
-.impact-item p { font-family: 'Titillium Web', sans-serif; color: #004d22; font-weight: 900; letter-spacing: 2px; margin-top: 10px; text-transform: uppercase; font-size: 1.1rem;}
-
-/* 3. FILTROS DE LA GALERÍA */
-.filter-buttons { text-align: center; margin-bottom: 60px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-.filter-btn { 
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid #333; color: #888; 
-    padding: 15px 35px; cursor: pointer; font-weight: 700; transition: 0.3s; 
-    text-transform: uppercase; letter-spacing: 1px; font-size: 1.1rem; font-family: 'Titillium Web', sans-serif;
-    border-radius: 6px;
-}
-.filter-btn:hover, .filter-btn.active { 
-    background: var(--mpc-green); color: white; border-color: var(--mpc-green); box-shadow: 0 5px 20px rgba(0,154,68,0.4); transform: translateY(-3px);
+.gallery-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
-/* 4. GRID DE OBRAS */
-.project-grid-layout { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-    gap: 35px; 
-    min-height: 500px; 
+.gallery-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,154,68,0.15);
+    border-color: var(--mpc-green);
 }
-.feat-project { 
-    height: 380px; position: relative; overflow: hidden; 
-    border: 1px solid #222; border-radius: 12px; cursor: zoom-in; transition: transform 0.4s ease; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+.g-img-box {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
 }
-.p-bg { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; filter: brightness(0.8); }
 
-.feat-project:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,154,68,0.2); border-color: var(--mpc-green);}
-.feat-project:hover .p-bg { transform: scale(1.1); filter: brightness(1.1); }
-
-.p-overlay { 
-    position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; 
-    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent); 
-    transform: translateY(20px); transition: 0.4s; 
+.g-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
 }
-.feat-project:hover .p-overlay { transform: translateY(0); }
-.p-cat { font-family: 'Titillium Web', sans-serif; color: var(--mpc-green); font-size: 0.85rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; background: rgba(0,0,0,0.8); padding: 6px 12px; display: inline-block; margin-bottom: 10px; border: 1px solid var(--mpc-green); border-radius: 4px;}
-.feat-project h3 { font-family: 'Titillium Web', sans-serif; color: white; font-size: 1.8rem; margin: 0; letter-spacing: 1px; font-weight: 900;}
 
-.project-item { transition: opacity 0.4s ease, transform 0.4s ease; }
-.project-item.hide { opacity: 0; transform: scale(0.9); pointer-events: none; }
-.project-item.show { opacity: 1; transform: scale(1); pointer-events: auto; }
+.gallery-card:hover .g-img-box img {
+    transform: scale(1.08);
+}
 
-/* 5. CASO DE ÉXITO (TICLIO) */
-.case-study-section { background: #0a0a0a; padding: 120px 0; border-top: 1px solid #222; }
-.case-grid { display: flex; gap: 80px; align-items: center; flex-wrap: wrap; }
-.case-text { flex: 2; min-width: 300px; }
-.case-text h2 { font-family: 'Titillium Web', sans-serif; color: white; margin-bottom: 20px; font-size: 4rem; font-weight: 900;}
-.case-lead { font-family: 'Titillium Web', sans-serif; color: #eee; font-size: 1.3rem; margin-bottom: 25px; line-height: 1.5; font-weight: 700; border-left: 5px solid var(--mpc-green); padding-left: 20px;}
-.case-desc { font-family: 'Titillium Web', sans-serif; color: #aaa; font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; }
+.g-info {
+    padding: 25px 20px;
+    text-align: left;
+}
 
-.case-metrics { display: flex; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
-.metric-item { text-align: center; background: #111; padding: 25px 35px; border-radius: 12px; border: 1px solid #222; transition: 0.3s;}
-.metric-item:hover { border-color: var(--mpc-green); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5);}
-.metric-item i { color: var(--mpc-green); font-size: 3rem; margin-bottom: 15px; }
-.metric-item p { font-family: 'Titillium Web', sans-serif; color: #888; font-weight: 800; font-size: 1.2rem; letter-spacing: 1px; margin:0;}
+.g-cat {
+    display: block;
+    color: var(--mpc-green);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
 
-.case-sheet-wrapper { flex: 1; min-width: 350px; }
-.tech-sheet { background: #111; padding: 50px 40px; border: 1px solid #333; border-top: 6px solid var(--mpc-green); box-shadow: 0 15px 40px rgba(0,0,0,0.6); border-radius: 12px; }
-.tech-sheet h4 { font-family: 'Titillium Web', sans-serif; color: white; margin-bottom: 30px; font-size: 2.2rem; letter-spacing: 2px; font-weight: 900; text-align: center;}
-.sheet-row { display: flex; justify-content: space-between; border-bottom: 1px solid #222; padding: 15px 0; color: #ccc; font-size: 1.15rem; font-family: 'Titillium Web', sans-serif;}
-.sheet-row:last-child { border-bottom: none; padding-bottom: 0;}
-.sheet-row span:first-child { font-weight: 700; color: #888; text-transform: uppercase; }
-.sheet-row span:last-child { color: white; font-weight: 900; text-align: right; }
+.g-info h3 {
+    color: var(--mpc-dark);
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin: 0;
+}
 
-/* 6. CTA FINAL */
-.cta-project { text-align: center; padding: 120px 5%; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-attachment: fixed; border-top: 1px solid #333; }
-.cta-project h2 { font-family: 'Titillium Web', sans-serif; color: white; font-size: 3.5rem; margin-bottom: 15px; font-weight: 900;}
-.cta-project p { font-family: 'Titillium Web', sans-serif; color: #ccc; font-size: 1.3rem; margin-bottom: 40px; }
-
-/* 7. LIGHTBOX (PANTALLA COMPLETA) */
-.lightbox {
-    display: none; 
-    position: fixed; 
-    z-index: 2000; 
-    left: 0; 
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0,0,0,0.95);
-    backdrop-filter: blur(10px);
+/* 🌟 VENTANA EMERGENTE (MODAL) 🌟 */
+.modal-overlay {
+    display: flex;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
 }
 
-.lightbox-content {
-    max-width: 90%;
-    max-height: 75vh; 
-    border: 2px solid #333;
-    border-radius: 8px;
-    box-shadow: 0 0 40px rgba(0,0,0,1);
-    object-fit: contain; 
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
 
-.lightbox-caption {
-    margin-top: 25px;
-    color: white;
+.modal-window {
+    background-color: #fff;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transform: scale(0.8);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote suave */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.modal-overlay.show .modal-window {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: 700;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--mpc-green);
+    transform: scale(1.1);
+}
+
+/* Estructura dividida del modal */
+.modal-split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 450px;
+}
+
+.modal-img-side {
+    background-color: #f1f1f1;
+}
+
+.modal-img-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-text-side {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-text-side .sub-tag {
+    margin-bottom: 15px;
+    border: none;
+    background: var(--mpc-gray);
+    padding: 6px 15px;
+}
+
+.modal-text-side h2 {
     font-size: 2.2rem;
-    font-family: 'Titillium Web', sans-serif;
+    color: var(--mpc-dark);
     font-weight: 900;
-    text-align: center;
-    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.1;
 }
 
-.close-lightbox {
-    position: absolute; 
-    top: 30px; 
-    right: 50px;
-    color: #fff; 
-    font-size: 50px; 
-    font-weight: 300;
-    transition: 0.3s; 
-    cursor: pointer; 
+.modal-text-side p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
 }
-.close-lightbox:hover { color: var(--mpc-green); transform: scale(1.1); }
+
+/* 🌟 CTA FOOTER 🌟 */
+.cta-banner { background-color: var(--mpc-green); padding: 60px 0; color: white; }
+.cta-banner h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 15px;}
+.cta-banner p { font-size: 1.1rem; margin-bottom: 25px;}
+.text-center { text-align: center; }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
-    .case-grid { flex-direction: column; gap: 40px; }
-    .hero-container h1 { font-size: 3.5rem; }
-    .impact-item h2 { font-size: 3.5rem; }
-    .case-metrics { justify-content: flex-start; }
-    .tech-sheet { padding: 30px 20px; min-width: 100%; }
-    .lightbox-caption { font-size: 1.5rem; }
-    .filter-btn { width: 100%; }
+@media (max-width: 992px) {
+    .page-hero { padding: 180px 0 80px 0; }
+    .page-hero h1 { font-size: 2.8rem; }
+    
+    .modal-split {
+        grid-template-columns: 1fr;
+    }
+    .modal-img-side {
+        height: 250px; /* En celular la foto se pone arriba */
+    }
+    .modal-text-side {
+        padding: 30px 25px;
+    }
 }
