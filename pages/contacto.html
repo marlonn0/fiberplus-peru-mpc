@@ -209,30 +209,27 @@
 
     <script>
         document.getElementById('formCotizacion').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita que la página recargue al dar clic en enviar
+            event.preventDefault(); 
 
-            // Obtener los valores de los campos
-            var nombre = document.getElementById('nombre').value;
-            var empresa = document.getElementById('empresa').value || 'No especificada';
-            var email = document.getElementById('email').value;
-            var telefono = document.getElementById('telefono').value;
+            var nombre = document.getElementById('nombre').value.trim();
+            var empresa = document.getElementById('empresa').value.trim() || 'No especificada';
+            var email = document.getElementById('email').value.trim();
+            var telefono = document.getElementById('telefono').value.trim();
             var servicio = document.getElementById('servicio').value || 'No especificado';
-            var mensaje = document.getElementById('mensaje').value;
+            var mensaje = document.getElementById('mensaje').value.trim();
 
-            // Construir el texto estructurado
-            var textoBase = "Hola *MPC Perú*, quiero solicitar una cotización. Aquí están los detalles de mi proyecto:\n\n" +
-                            "👤 *Nombre:* " + nombre + "\n" +
-                            "🏢 *Empresa:* " + empresa + "\n" +
-                            "📧 *Correo:* " + email + "\n" +
-                            "📱 *Teléfono:* " + telefono + "\n" +
-                            "⚙️ *Servicio de Interés:* " + servicio + "\n" +
-                            "📝 *Detalles:* " + mensaje;
+            // Texto completamente limpio, sin emojis ni negritas
+            var textoBase = "Hola MPC Perú, quiero solicitar una cotización. Aquí están los detalles de mi proyecto:\n\n" +
+                            "- Nombre: " + nombre + "\n" +
+                            "- Empresa: " + empresa + "\n" +
+                            "- Correo: " + email + "\n" +
+                            "- Teléfono: " + telefono + "\n" +
+                            "- Servicio de Interés: " + servicio + "\n" +
+                            "- Detalles: " + mensaje;
 
-            // Codificamos el texto para que la URL lo procese perfectamente (espacios, tildes, saltos de línea)
             var textoCodificado = encodeURIComponent(textoBase);
             var numeroDestino = "51962306887";
             
-            // Creamos el enlace final y lo abrimos en otra pestaña
             var url = "https://wa.me/" + numeroDestino + "?text=" + textoCodificado;
             window.open(url, '_blank');
         });
