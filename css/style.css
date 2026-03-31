@@ -73,6 +73,14 @@ body {
 }
 .cta-button:hover { background-color: var(--mpc-dark); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
 
+/* ✅ BOTÓN MENÚ MÓVIL (Oculto en PC) ✅ */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--mpc-dark);
+    cursor: pointer;
+}
+
 /* ================== UTILIDADES ================== */
 .container-custom { width: 90%; max-width: 1300px; margin: 0 auto; }
 
@@ -174,7 +182,45 @@ body {
 .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
+/* ================== RESPONSIVE MÓVIL ================== */
 @media (max-width: 900px) {
+    /* ✅ MENÚ HAMBURGUESA ✅ */
+    .mobile-menu-btn { display: block; }
+    
+    .menu {
+        position: absolute;
+        top: 90px; /* Justo debajo del navbar */
+        left: 0;
+        width: 100%;
+        background: var(--mpc-light);
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    }
+    
+    .menu.show { max-height: 500px; }
+    
+    .menu li {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid var(--mpc-gray);
+    }
+    
+    .menu li a {
+        display: block;
+        padding: 15px 0;
+    }
+    
+    .cta-button {
+        border-radius: 0;
+        display: block;
+        width: 100%;
+        box-shadow: none;
+    }
+
     .footer-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
     .f-slogan { margin: 0 auto 25px; }
     .social-links { justify-content: center; }

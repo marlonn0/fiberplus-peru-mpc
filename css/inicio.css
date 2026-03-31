@@ -1,5 +1,5 @@
 /* =========================================
-   ESTILOS EXCLUSIVOS: INICIO / HOME 
+   ESTILOS EXCLUSIVOS: INICIO - MPC
    Archivo: css/inicio.css
    ========================================= */
 
@@ -62,7 +62,7 @@
 .intro-desc { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 35px; }
 .intro-img-box img { width: 100%; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: block; }
 
-/* 🌟 VIDEO (NUEVO DISEÑO CUADRADO PARA LLENAR EL ESPACIO) 🌟 */
+/* 🌟 VIDEO 🌟 */
 .video-split-layout {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -81,14 +81,13 @@
     width: 100%;
 }
 
-/* El Marco del Video (Ahora un cuadrado amplio y elegante) */
 .corp-video-wrapper {
     width: 100%;
-    max-width: 550px; /* Tamaño ideal para llenar el lado derecho */
-    aspect-ratio: 1 / 1; /* Esto lo hace un cuadrado perfecto automáticamente */
-    border-radius: 12px; /* Bordes corporativos */
+    max-width: 550px; 
+    aspect-ratio: 1 / 1; 
+    border-radius: 12px; 
     box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-    border: 5px solid #fff; /* Marco blanco limpio */
+    border: 5px solid #fff; 
     background-color: #000;
     overflow: hidden; 
     display: block;
@@ -96,13 +95,11 @@
     margin: 0 auto;
 }
 
-/* El Elemento Video en sí */
 .corp-video {
     width: 100%;
     height: 100%; 
     display: block;
     object-position: center;
-    /* Zoom automático para llenar el cuadrado sin franjas negras */
     object-fit: cover; 
 }
 
@@ -128,7 +125,7 @@
 }
 .icon-card i { font-size: 3.5rem; color: var(--mpc-green); margin-bottom: 20px; display: block;}
 .icon-card h3 { font-size: 1.4rem; color: var(--mpc-dark); font-weight: 900; margin-bottom: 15px; }
-.icon-card p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
+.icon-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
 /* ANIMACIONES */
 @keyframes scaleIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
@@ -138,19 +135,91 @@
 .slide-up-delay-2 { opacity: 0; animation: slideUp 0.8s ease forwards 0.5s; }
 .slide-up-delay-3 { opacity: 0; animation: slideUp 0.8s ease forwards 0.7s; }
 
-/* RESPONSIVE */
+/* =========================================
+   MEDIA QUERIES - INICIO MPC (MOBILE RESPONSIVE CORREGIDO)
+   ========================================= */
 @media (max-width: 992px) {
-    .hero-split-container { grid-template-columns: 1fr; text-align: center; gap: 50px; }
-    .hero-left { text-align: center; padding-right: 0; }
-    .hero-massive-logo { margin: 0 auto 25px auto; }
-    .hero-stats-row { justify-content: center; }
-    .hero-right { justify-content: center; }
-    .fiberplus-big-card { transform: translateY(0); }
+    /* CORRECCIÓN DEL HERO PARA QUE NO SE DESBORDE */
+    .hero-split-section { 
+        padding-top: 120px; 
+        padding-bottom: 60px; 
+        min-height: auto;
+    }
     
+    .hero-split-container { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+        text-align: center; 
+        /* CLAVE: Forzamos a que no se pase del ancho de la pantalla */
+        width: 100%;
+        max-width: 100vw;
+        padding: 0 20px; 
+        box-sizing: border-box;
+    }
+    
+    .hero-left { 
+        text-align: center; 
+        padding-right: 0; 
+        /* CLAVE: El div izquierdo tampoco debe pasarse del ancho */
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word; /* Permite cortar palabras larguísimas si es necesario */
+    }
+    
+    .hero-massive-logo { 
+        margin: 0 auto 25px auto; 
+        max-width: 250px; 
+        width: 80%;
+    }
+    
+    /* ACHICAMOS EL TEXTO PARA EVITAR DESBORDE */
+    .hero-left h1 { 
+        font-size: 2.2rem; 
+        word-wrap: break-word;
+        hyphens: auto; 
+        margin-bottom: 15px;
+    } 
+    
+    .hero-desc { 
+        font-size: 1.1rem; 
+        margin: 0 auto 30px; 
+        padding: 0 10px; 
+    }
+    
+    .hero-stats-row { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 20px; 
+        width: 100%;
+    }
+    
+    .stat-item { 
+        flex: 1 1 45%; 
+        min-width: 130px;
+        text-align: center;
+    }
+    
+    .stat-num { font-size: 1.8rem; }
+
+    /* TARJETA CENTRADA */
+    .fiberplus-big-card { 
+        max-width: 95%; 
+        margin: 0 auto; 
+        transform: translateY(0); 
+        padding: 30px 20px;
+    }
+    
+    /* Arreglo de los Grids (Para que bajen en 1 columna) */
     .intro-layout { grid-template-columns: 1fr; text-align: center;}
     .intro-lead { border-left: none; padding-left: 0;}
+    .intro-text-content h2 { font-size: 2rem; }
     
     .video-split-layout { grid-template-columns: 1fr; text-align: center; }
-    .video-bullets li { justify-content: center; }
-    .corp-video-wrapper { max-width: 100%; aspect-ratio: 16 / 9; /* En celular se vuelve un rectángulo normal */ }
+    .video-text-content h2 { font-size: 2rem; }
+    .video-bullets li { justify-content: center; text-align: left; }
+    
+    .cards-icon-grid { grid-template-columns: 1fr; }
+    .section-header-center h2 { font-size: 2rem; }
+    
+    .corp-video-wrapper { max-width: 100%; aspect-ratio: 16 / 9; }
 }

@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soporte y Mantenimiento | MPC Perú</title>
+    
+    <link rel="icon" type="image/png" href="../assets/img/logo.png">
+
+    <meta property="og:title" content="Soporte y Mantenimiento | MPC Perú">
+    <meta property="og:description" content="Garantizamos la disponibilidad y óptimo rendimiento de tus redes con atención especializada 24/7 a nivel nacional. Sin excusas, sin retrasos.">
+    <meta property="og:image" content="https://marlonn0.github.io/fiberplus-peru-mpc/assets/img/logo.png">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="../css/style.css"> 
     <link rel="stylesheet" href="../css/soporte.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -16,7 +24,12 @@
                 <img src="../assets/img/logo.png" alt="Logo MPC" class="nav-logo-img">
                 <span class="logo-text">MPC</span>
             </a>
-            <ul class="menu">
+            
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="menu" id="mainMenu">
                 <li><a href="../index.html">INICIO</a></li>
                 <li><a href="capacidades.html">CAPACIDADES</a></li>
                 <li><a href="empresa.html">LA EMPRESA</a></li>
@@ -198,6 +211,7 @@
     <a href="https://wa.me/51962306887?text=Hola%20MPC%20Per%C3%BA%2C%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios." class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
+        // Animación Reveal
         window.addEventListener('scroll', reveal);
         function reveal(){
             var reveals = document.querySelectorAll('.reveal');
@@ -210,6 +224,21 @@
             }
         }
         reveal();
+
+        // Lógica del Menú Hamburguesa
+        const btnMenu = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+
+        if(btnMenu && mainMenu) {
+            btnMenu.addEventListener('click', () => {
+                mainMenu.classList.toggle('show');
+                if(mainMenu.classList.contains('show')) {
+                    btnMenu.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    btnMenu.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        }
     </script>
 </body>
 </html>
